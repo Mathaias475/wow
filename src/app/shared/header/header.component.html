@@ -1,0 +1,25 @@
+<div [class.opacity]="showDropDown" class="header">
+  <div class="flex gap-5">
+    <img
+      class="w-9 h-9 cursor-pointer"
+      src="/assets/img/home.png"
+      (click)="goToHome()"
+    />
+    <img
+      (click)="showDropDownOptions()"
+      class="dropdown__arrow"
+      [class.rotate]="showDropDown"
+      src="/assets/icons/dropdown-arrow.png"
+    />
+  </div>
+</div>
+<div [class.z]="showDropDown" class="dropdown__menu">
+  <div
+    (click)="redirectTo(option.route)"
+    class="dropdown__menu__item"
+    *ngFor="let option of options"
+  >
+    <img class="w-9 h-9 justify-start" [src]="option.icon" />
+    <span class="text-white">{{ option.name }} </span>
+  </div>
+</div>

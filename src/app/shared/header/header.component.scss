@@ -1,0 +1,35 @@
+.header {
+  @apply flex items-center w-full h-16 fixed top-0 z-50 justify-end opacity-0 p-16;
+  background: linear-gradient( #141313 1%, transparent);
+  transition: all 1s ease-in-out;
+  &:hover{
+    opacity: 1;
+  }
+}
+.dropdown {
+  &__arrow {
+    @apply w-8 h-8;
+    transition: all 0.3s cubic-bezier(1, -1.26, 0.81, 1.71);
+  }
+  &__menu {
+    @apply fixed rounded-md w-48 bg-[#050A0F] z-[-10] right-[65px] top-[95px];
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &__item {
+      @apply flex gap-3 p-5 cursor-pointer items-center;
+      &:hover{
+        background: linear-gradient(to right, black, #82830A, black);
+      }
+    }
+  }
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.opacity {
+  opacity: 1;
+}
+.z {
+  opacity: 1;
+  z-index: 0;
+}

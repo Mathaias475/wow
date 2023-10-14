@@ -1,0 +1,23 @@
+@mixin card {
+  @apply p-4 w-1/2 h-fit;
+  background-color: rgba($color: #141313, $alpha: 0.5);
+  border: 2px solid #6F6C6E;
+  &__icon {
+    @apply w-10 h-10;
+  }
+}
+.home {
+  @apply p-12 h-full flex flex-col gap-5;
+  &__item {
+    @include card;
+    opacity: 0;
+    transition: opacity 2.5s ease;
+    @apply flex gap-5 text-white;
+  }
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(30px);
+  transition: all 1s ease-in-out;
+}

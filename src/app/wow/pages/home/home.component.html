@@ -1,0 +1,6 @@
+<section class="home">
+  <div class="home__item" [class.show]="showCards" *ngFor="let card of cards">
+    <img [src]="card.icon" class="home__item__icon"/>
+    {{ card.text }}
+  </div>
+</section>
