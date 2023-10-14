@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit{
 
   cards = [
     {
-      icon: '/assets/icons/bag.png',
+      icon: '',
       text: 'Items: informacion de items como rareza, porcentaje de drop, informacion del item, donde encontrarlos y stats.'
     },
     {
@@ -20,25 +20,41 @@ export class HomeComponent implements OnInit{
     {
       icon: '',
       text: 'Profesiones: guia para subir las profesiones de 1 a 450.'
+    },
+    {
+      icon: '',
+      text: 'Calabozos: guia de jefes de calabozos para la expancion Warth of the Lich King'
+    },
+    {
+      icon: '',
+      text: 'Campos de batalla: descubre las diversas formas de hacer PvP en World of Warcraft'
+    },
+    {
+      icon: '',
+      text: 'Bandas: informate sobre los mayores desafios PvE para obtener los mejores equipamientos'
     }
   ]
 
   ngOnInit(): void {
-    this.getCharactersIcon();
-    this.getProfessionsIcon();
+    this.setIconForCard(this.cards, 0, 'bags', 4);
+    this.setIconForCard(this.cards, 1, 'classes', 12);
+    this.setIconForCard(this.cards, 2, 'professions', 15);
+    this.setIconForCard(this.cards, 3, 'dungeon-rols', 3);
+    this.setIconForCard(this.cards, 4, 'battlegrounds', 2);
+    this.setIconForCard(this.cards, 5, 'raids', 3);
     setTimeout(() =>{
       this.showCards = true;
     }, 100);
   }
 
-  getCharactersIcon() {
-    let number = Math.random();
-    let result = Math.floor(number * 12) + 1;
-    this.cards[1].icon = '/assets/img/classes/'+result+'.png'
+   getRandomIcon(type: string, maxRange: number) {
+    const number = Math.random();
+    const result = Math.floor(number * maxRange) + 1;
+    return `/assets/img/${type}/${result}.png`;
   }
-  getProfessionsIcon() {
-    let number = Math.random();
-    let result = Math.floor(number * 15) + 1;
-    this.cards[2].icon = '/assets/img/professions/'+result+'.png'
+  
+  setIconForCard(cards:{icon: string, text: string}[], index: number, type: string, maxRange: number) {
+    cards[index].icon = this.getRandomIcon(type, maxRange);
   }
+  
 }
