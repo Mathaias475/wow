@@ -1,5 +1,5 @@
 @mixin card {
-  @apply p-4 w-1/2 h-fit;
+  @apply p-4 h-fit flex items-center;
   background-color: rgba($color: #141313, $alpha: 0.5);
   border: 2px solid #6F6C6E;
   &__icon {
@@ -7,15 +7,21 @@
   }
 }
 .home {
-  @apply p-12 h-full flex flex-col gap-5;
+  @apply p-12 flex justify-between;
+}
+.cards {
+  @apply  h-full w-[60%] flex flex-col gap-5;
   &__item {
     @include card;
-    opacity: 0;
-    transition: opacity 2.5s ease;
-    @apply flex gap-5 text-white;
+    transition: opacity 1s ease;
+    @apply flex gap-5 text-white opacity-0;
   }
 }
-
+.btns-container {
+  @include card;
+  @apply flex flex-col z-0 h-auto p-8 w-[30%] gap-14 opacity-0;
+  transition: opacity 1s ease;
+}
 .show {
   opacity: 1;
   transform: translateX(30px);
