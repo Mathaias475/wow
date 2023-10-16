@@ -1,4 +1,4 @@
-<section class="home">
+<div class="home page" style="background-image: url('{{bgImg}}');">
   <div class="cards">
     <div *ngFor="let card of cards">
       <div class="cards__item" [class.show]="showCards">
@@ -12,4 +12,4 @@
       <wow-button width="220px" (click)="redirectToPage(card.route)" [label]="card.btnText" />
     </div>
   </div>
-</section>
+</div>

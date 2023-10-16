@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WoWRoutes } from '../../wow.routes';
+import { BackgroundService } from 'src/app/common/services/background.service';
+
 
 @Component({
   selector: 'wow-home',
@@ -11,8 +13,8 @@ export class HomeComponent implements OnInit{
   showCards = false;
 
   routes = WoWRoutes.ROUTES;
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private backgroundService: BackgroundService) { }
+  bgImg = this.backgroundService.getRandomBackground(this.router.url, 3);
   cards = [
     {
       icon: '',
@@ -34,7 +36,7 @@ export class HomeComponent implements OnInit{
     },
     {
       icon: '',
-      text: 'Calabozos: guia de jefes de calabozos para la expancion Warth of the Lich King',
+      text: 'Calabozos: guia de jefes de calabozos para la expansion Warth of the Lich King',
       route: this.routes.Dungeons.fullPath,
       btnText: 'Ir a calabozos',
     },

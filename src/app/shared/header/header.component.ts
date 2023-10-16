@@ -10,7 +10,7 @@ import { WoWRoutes } from 'src/app/wow/wow.routes';
 export class HeaderComponent {
   showDropDown = false;
   routes = WoWRoutes.ROUTES;
-  
+
   options = [
     {
       name: 'Items',
