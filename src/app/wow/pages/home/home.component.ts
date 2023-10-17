@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit{
 
   routes = WoWRoutes.ROUTES;
   constructor(private router: Router, private backgroundService: BackgroundService) { }
-  bgImg = this.backgroundService.getRandomBackground(this.router.url, 3);
+  bgImg = this.backgroundService.getRandomBackground('home', 3);
   cards = [
     {
       icon: '',

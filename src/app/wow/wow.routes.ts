@@ -1,8 +1,8 @@
 export class WoWRoutes {
   public static ROUTES = {
     Home: {
-      path: 'home',
-      fullPath: 'home',
+      path: '',
+      fullPath: '',
     },
     Characters: {
       path: 'characters',
