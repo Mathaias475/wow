@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string = '';
+  @Input() width: string = '';
+
+
+  customWidth(width : string) {
+    return 'width: '+width;
+  }
 }

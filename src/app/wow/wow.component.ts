@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-wow',
-  templateUrl: './wow.component.html',
+  selector: "app-wow",
+  templateUrl: "./wow.component.html",
   styleUrls: ['./wow.component.scss']
 })
 export class WowComponent implements OnInit{
@@ -20,7 +20,7 @@ export class WowComponent implements OnInit{
       }
       setTimeout(()=>{
         this.routeChange = false;
-      },1400)
+      },3400)
     });
   }
 

@@ -1,6 +1,15 @@
-<section class="home">
-  <div class="home__item" [class.show]="showCards" *ngFor="let card of cards">
-    <img [src]="card.icon" class="home__item__icon"/>
-    {{ card.text }}
+<div class="home page" style="background-image: url('{{bgImg}}');">
+  <div class="cards">
+    <div *ngFor="let card of cards">
+      <div class="cards__item" [class.show]="showCards">
+        <img [src]="card.icon" class="cards__item__icon" />
+        {{ card.text }}
+      </div>
+    </div>
   </div>
-</section>
+  <div class="btns-container" [class.show]="showCards">
+    <div *ngFor="let card of cards">
+      <wow-button width="220px" (click)="redirectToPage(card.route)" [label]="card.btnText" />
+    </div>
+  </div>
+</div>

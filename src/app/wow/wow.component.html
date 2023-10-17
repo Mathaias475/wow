@@ -1,7 +1,9 @@
 <wow-header/>
-<div class="page">
-  <router-outlet></router-outlet>
+<div class="page" >
+  <div *ngIf="!routeChange">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="align page" [class.not-allowed]="routeChange" *ngIf="routeChange" style="background-image: url('/assets/img/backgrounds/loader/loading.png');">
+    <wow-loading/>
+  </div> 
 </div>
-<!-- <div *ngIf="routeChange">
-  <wow-loader-bar/>
-</div> -->
