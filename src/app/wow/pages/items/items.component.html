@@ -1,4 +1,11 @@
 <section class="page align" style="background-image: url('{{bgImg}}');">
-
+  <div *ngFor="let item of items">
+    <div class="card ">
+      <div class="card__icon">
+        <img [src]="item.icon"/>
+      </div>
+      {{item.name}}
+    </div>
+  </div>
   <wow-search placeholder="Buscar item" (onValue)="searchItem($event)"/>
 </section>

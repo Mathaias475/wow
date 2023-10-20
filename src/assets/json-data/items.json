@@ -24,5 +24,32 @@
     "lvlRequired": 80,
     "damagePerSecond": 344.1,
     "icon": "/assets/img/items/shadowmourne.png"
+},
+{
+  "name": "Glorenzelg, alta hoja de la Mano de Plata",
+  "itemLvl": 284,
+  "stats": [{
+    "Fuerza": 198,
+    "Aguante": 222}
+  ],
+  "descriptionText": "Dechado de la Luz, lidera nuestros ejércitos contra la oscuridad que nos aguarda.",
+  "weaponType": "Espada",
+  "rare": "Unico",
+  "gearScore": 1103,
+  "additionalStats": [{
+    "name": "Indice de golpe critico",
+    "value": 122
+  },{
+    "name": "Indice de pericia",
+    "value": 114
+  }],
+    "weaponSpeed": 3.60,
+    "weaponsHands": "Two-Hands",
+    "jewelerSockets": ["red", "red", "red"],
+    "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
+    "socketBonus": "+8 Fuerza",
+    "lvlRequired": 80,
+    "damagePerSecond": 344.17,
+    "icon": "/assets/img/items/high-blade-of-the-silver-hand.png"
 }
 ]

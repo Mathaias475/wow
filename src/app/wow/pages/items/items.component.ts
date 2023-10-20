@@ -24,8 +24,6 @@ export class ItemsComponent implements OnInit{
   searchItem(name: string) {
     this.itemsService.getItems(name).subscribe((res) => {
       this.items = res;
-      console.log(this.items);
-      
     });
 
     

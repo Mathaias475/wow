@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { CacheStore } from "src/app/wow/interfaces/cacheStore.interface";
 import { HttpClient } from '@angular/common/http';
 import { Item } from "src/app/wow/interfaces/item.interface";
-import { Observable, filter, map, tap } from "rxjs";
+import { Observable, map, tap } from "rxjs";
 
 
 @Injectable({ providedIn: "root" })
@@ -22,7 +22,7 @@ private itemsUrl = '/assets/json-data/items.json'
   getItems(term: string): Observable<Item[]> {
     return this.http.get<Item[]>(this.itemsUrl).pipe(
       map((data: Item[]) => {
-      return data;
+      return data.filter((res: Item) => res.name.includes(term));
         
       }),
       tap(filteredItems => {
@@ -32,4 +32,4 @@ private itemsUrl = '/assets/json-data/items.json'
     );
   }
 }
-/* filter((res: Item) => res.name === term ) */
+/*  */
