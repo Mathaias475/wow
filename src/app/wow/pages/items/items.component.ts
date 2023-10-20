@@ -22,12 +22,11 @@ export class ItemsComponent implements OnInit{
 
  ngOnInit(): void {
   this.items = this.itemsService.cacheStore.byItem.items;
-  
- }
+}
 
- getColorName(rarity: string) {
-  return getColorNameByRarity(rarity);
- }
+getColorName(rarity: string) {
+ return getColorNameByRarity(rarity);
+}
 
   searchItem(name: string) {
     this.itemsService.getItems(name).subscribe((res) => {

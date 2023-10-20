@@ -1,15 +1,24 @@
-export const getColorNameByRarity = (rarity: string): string =>  {
-
+export const getColorNameByRarity = (rarity: string): string => {
   let color;
-switch(rarity) {
-  case 'Legendario':
-    color = '#D45509';
-    break;
-  case 'Unico':
-    color = '#7F2ABB';
-    break;
+  switch (rarity) {
+    case "Legendario":
+      color = "wow-orange";
+      break;
+    case "Unico":
+      color = "wow-violet";
+      break;
+    case "Raro":
+      color = "wow-blue";
+      break;
+    case "Magico":
+      color = "wow-green";
+      break;
+    case "Comun":
+      color = "wow-gray";
+      break;
+    default:
+      color = "wow-gray";
+      break;
   }
   return color!;
-
-
-}
+};

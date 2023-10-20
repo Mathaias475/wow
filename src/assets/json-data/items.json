@@ -1,22 +1,32 @@
-[{
-  "name": "Agonia de las Sombras",
-  "itemLvl": 284,
-  "stats": [{
-    "Fuerza": 223,
-    "Aguante": 198}
-  ],
-  "descriptionText": "Hacha agonia de las sombras",
-  "weaponType": "Hacha",
-  "rare": "Legendario",
-  "gearScore": 1433,
-  "additionalStats": [{
-    "name": "Indice de golpe critico",
-    "value": 114
-  },{
-    "name": "Penetracion de armadura",
-    "value": 114
-  }],
-    "weaponSpeed": 3.70,
+[
+  {
+    "name": "Agonia de las Sombras",
+    "itemLvl": 284,
+    "damage": "954 - 1592",
+    "stats": [
+      {
+        "Fuerza": 223,
+        "Aguante": 198
+      }
+    ],
+    "descriptionText": "Hacha agonia de las sombras",
+    "weaponType": "Hacha",
+    "rare": "Legendario",
+    "gearScore": 1433,
+    "additionalStats": [
+      {
+        "name": "Indice de golpe critico",
+        "value": 114
+      },
+      {
+        "name": "Penetracion de armadura",
+        "value": 114
+      },
+      {
+        "name": "Tus ataques cuerpo a cuerpo tienen la probabilidad de drenar un trozo de alma, lo que te otorga 30 p. de fuerza. Cuando hayas acumulado 10 trozos de alma, liberarás Pesadilla de caos, que inflige 1900 to 2100 p. de daño de las Sombras repartido entre todos los enemigos en un radio de 15 m y te otorga 270 p. de fuerza durante 10 sec."
+      }
+    ],
+    "weaponSpeed": 3.7,
     "weaponsHands": "Two-Hands",
     "jewelerSockets": ["red", "red", "red"],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
@@ -24,26 +34,32 @@
     "lvlRequired": 80,
     "damagePerSecond": 344.1,
     "icon": "/assets/img/items/shadowmourne.png"
-},
-{
-  "name": "Glorenzelg, alta hoja de la Mano de Plata",
-  "itemLvl": 284,
-  "stats": [{
-    "Fuerza": 198,
-    "Aguante": 222}
-  ],
-  "descriptionText": "Dechado de la Luz, lidera nuestros ejércitos contra la oscuridad que nos aguarda.",
-  "weaponType": "Espada",
-  "rare": "Unico",
-  "gearScore": 1103,
-  "additionalStats": [{
-    "name": "Indice de golpe critico",
-    "value": 122
-  },{
-    "name": "Indice de pericia",
-    "value": 114
-  }],
-    "weaponSpeed": 3.60,
+  },
+  {
+    "name": "Glorenzelg, alta hoja de la Mano de Plata",
+    "damage": "991 - 1487",
+    "itemLvl": 284,
+    "stats": [
+      {
+        "Fuerza": 198,
+        "Aguante": 222
+      }
+    ],
+    "descriptionText": "Dechado de la Luz, lidera nuestros ejércitos contra la oscuridad que nos aguarda.",
+    "weaponType": "Espada",
+    "rare": "Unico",
+    "gearScore": 1103,
+    "additionalStats": [
+      {
+        "name": "Indice de golpe critico",
+        "value": 122
+      },
+      {
+        "name": "Indice de pericia",
+        "value": 114
+      }
+    ],
+    "weaponSpeed": 3.6,
     "weaponsHands": "Two-Hands",
     "jewelerSockets": ["red", "red", "red"],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
@@ -51,5 +67,66 @@
     "lvlRequired": 80,
     "damagePerSecond": 344.17,
     "icon": "/assets/img/items/high-blade-of-the-silver-hand.png"
-}
+  },
+  {
+    "name": "Hacha de muerte congelada",
+    "damage": "489 - 512",
+    "itemLvl": 32,
+    "stats": [
+      {
+        "Fuerza": 45,
+        "Aguante": 76
+      }
+    ],
+    "descriptionText": "",
+    "itemType": "Hacha",
+    "rare": "Raro",
+    "gearScore": 563,
+    "additionalStats": [
+      {
+        "name": "Indice de golpe critico",
+        "value": 71
+      },
+      {
+        "name": "Indice de celeridad",
+        "value": 46
+      }
+    ],
+    "weaponSpeed": 3.6,
+    "weaponsHands": "Two-Hands",
+    "jewelerSockets": [],
+    "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
+    "socketBonus": "",
+    "lvlRequired": 68,
+    "damagePerSecond": 198.6,
+    "icon": "/assets/img/items/frozen-death-ax.png"
+  },
+  {
+    "name": "Bryntrol, la mediadora de huesos",
+    "damage": "801 - 1203",
+    "itemLvl": 264,
+    "stats": [
+      {
+        "Fuerza": 169,
+        "Aguante": 161
+      }
+    ],
+    "descriptionText": "",
+    "itemType": "Hacha",
+    "rare": "Unico",
+    "gearScore": 1103,
+    "additionalStats": [
+      {
+        "name": "Probabilidad al acertar: Roba 2138 to 2362 p. de vida al objetivo."
+      }
+    ],
+    "weaponSpeed": 3.40,
+    "weaponsHands": "Two-Hands",
+    "jewelerSockets": ["red", "blue"],
+    "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
+    "socketBonus": "+ 6 fuerza",
+    "lvlRequired": 80,
+    "damagePerSecond": 294.71,
+    "icon": "/assets/img/items/bryntrol-the-bone-mediator.png"
+  }
 ]

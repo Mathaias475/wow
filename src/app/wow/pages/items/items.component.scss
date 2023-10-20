@@ -1,5 +1,5 @@
 @mixin card {
-  @apply p-4 h-fit flex items-center text-white;
+  @apply p-4 h-fit flex items-center gap-2;
   background-color: rgba($color: #141313, $alpha: 0.5);
   border: 2px solid #6F6C6E;
   &__icon {
