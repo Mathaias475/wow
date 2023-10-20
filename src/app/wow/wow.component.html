@@ -1,4 +1,4 @@
-<wow-header/>
+<wow-header *ngIf="!routeChange"/>
 <div class="page" >
   <div *ngIf="!routeChange">
     <router-outlet></router-outlet>

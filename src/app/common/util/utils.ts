@@ -1,5 +1,15 @@
-export const getRandomBackground = (type: string, maxRange: number): string => {
-  const number = Math.random();
-  const result = Math.floor(number * maxRange) + 1;
-  return `/assets/img/backgrounds/${type}/${result}.png`;
-};
+export const getColorNameByRarity = (rarity: string): string =>  {
+
+  let color;
+switch(rarity) {
+  case 'Legendario':
+    color = '#D45509';
+    break;
+  case 'Unico':
+    color = '#7F2ABB';
+    break;
+  }
+  return color!;
+
+
+}

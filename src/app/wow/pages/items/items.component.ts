@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BackgroundService } from "src/app/common/services/background.service";
 import { ItemsService } from "src/app/common/services/items.service";
 import { Item } from '../../interfaces/item.interface';
+import { getColorNameByRarity } from "src/app/common/util/utils";
 
 @Component({
   selector: "app-items",
@@ -9,8 +10,11 @@ import { Item } from '../../interfaces/item.interface';
   styleUrls: ["./items.component.scss"],
 })
 export class ItemsComponent implements OnInit{
+
   bgImg = this.backgroundService.getRandomBackground("items", 2);
   items : Item[] = [];
+
+
   constructor(
     private backgroundService: BackgroundService,
     private itemsService: ItemsService
@@ -19,6 +23,10 @@ export class ItemsComponent implements OnInit{
  ngOnInit(): void {
   this.items = this.itemsService.cacheStore.byItem.items;
   
+ }
+
+ getColorName(rarity: string) {
+  return getColorNameByRarity(rarity);
  }
 
   searchItem(name: string) {
