@@ -1,0 +1,28 @@
+[{
+  "name": "Agonia de las Sombras",
+  "itemLvl": 284,
+  "stats": [{
+    "Fuerza": 223,
+    "Aguante": 198}
+  ],
+  "descriptionText": "Hacha agonia de las sombras",
+  "weaponType": "Hacha",
+  "rare": "Unico",
+  "gearScore": 1433,
+  "additionalStats": [{
+    "name": "Indice de golpe critico",
+    "value": 114
+  },{
+    "name": "Penetracion de armadura",
+    "value": 114
+  }],
+    "weaponSpeed": 3.70,
+    "weaponsHands": "Two-Hands",
+    "jewelerSockets": ["red", "red", "red"],
+    "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
+    "socketBonus": "+8 Fuerza",
+    "lvlRequired": 80,
+    "damagePerSecond": 344.1,
+    "icon": "/assets/img/items/shadowmourne.png"
+}
+]

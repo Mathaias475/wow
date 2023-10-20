@@ -1,1 +1,5 @@
-<input type="text" (keyup.enter)="onSearch(search.value)" #search>
+<input type="text" 
+class="p-2"
+(keyup)="onSearch(search.value)"
+[placeholder]="placeholder"
+#search/>

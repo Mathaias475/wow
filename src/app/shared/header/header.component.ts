@@ -64,7 +64,6 @@ export class HeaderComponent {
       this.setIconForOption(this.options, 5, 'raids', 3);
       setTimeout(()=>{
         this.showDropDown == false;
-        console.log('asd'); 
       },500);
     }
   }
