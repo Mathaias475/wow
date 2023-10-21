@@ -128,5 +128,53 @@
     "lvlRequired": 80,
     "damagePerSecond": 294.71,
     "icon": "/assets/img/items/bryntrol-the-bone-mediator.png"
+  },
+  {
+    "name": "Piedra de hogar",
+    "damage": null,
+    "itemLvl": 1,
+    "stats": null,
+    "descriptionText": null,
+    "itemType": null,
+    "rare": "Comun",
+    "gearScore": null,
+    "additionalStats": [
+      {
+        "name": "Uso: Te devuelve a <Hearthstone Location>. Habla con un tabernero en otro sitio para convertirlo en tu nuevo hogar."
+      }
+    ],
+    "weaponSpeed": null,
+    "weaponsHands": null,
+    "jewelerSockets": null,
+    "avaliablesClasses": null,
+    "socketBonus": null,
+    "lvlRequired": 1,
+    "damagePerSecond": null,
+    "icon": "/assets/icons/home.png"
+  },
+  {
+    "name": "Toga inferno",
+    "damage": null,
+    "itemLvl": 22,
+    "stats": [{
+      "Armadura": 15
+    }],
+    "descriptionText": null,
+    "itemType": "Pecho",
+    "rare": "Magico",
+    "gearScore": 25,
+    "additionalStats": [
+      {
+        "name": "Equipar: aumenta tu poder con hechizos 21p."
+      }
+    ],
+    "weaponSpeed": null,
+    "weaponsHands": null,
+    "jewelerSockets": null,
+    "avaliablesClasses": ["Sacerdote", "Brujo", "Mago"],
+    "socketBonus": null,
+    "lvlRequired": 19,
+    "damagePerSecond": null,
+    "icon": "/assets/img/items/hell-toga.png"
   }
 ]

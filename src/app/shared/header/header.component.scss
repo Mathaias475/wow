@@ -1,5 +1,5 @@
 .header {
-  @apply flex items-center w-full h-16 fixed top-0 z-50 justify-end opacity-0 p-16;
+  @apply flex items-center w-full h-16 fixed top-0 z-50 justify-end opacity-0 p-8;
   background: linear-gradient( #141313 1%, transparent);
   transition: all 1s ease-in-out;
   &:hover{

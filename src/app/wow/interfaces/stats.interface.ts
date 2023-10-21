@@ -4,4 +4,5 @@ export interface Stats {
   Agilidad: number,
   Espiritu: number,
   Aguante: number,
+  Armadura: number
 }

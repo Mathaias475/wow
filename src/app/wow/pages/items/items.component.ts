@@ -21,7 +21,10 @@ export class ItemsComponent implements OnInit{
   ) {}
 
  ngOnInit(): void {
-  this.items = this.itemsService.cacheStore.byItem.items;
+
+  (this.itemsService.cacheStore.byItem.term != '') ?
+  this.items = this.itemsService.cacheStore.byItem.items :
+   this.searchItem('');
 }
 
 getColorName(rarity: string) {
@@ -32,7 +35,5 @@ getColorName(rarity: string) {
     this.itemsService.getItems(name).subscribe((res) => {
       this.items = res;
     });
-
-    
   }
 }

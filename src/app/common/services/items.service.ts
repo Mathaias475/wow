@@ -23,7 +23,6 @@ private itemsUrl = '/assets/json-data/items.json'
     return this.http.get<Item[]>(this.itemsUrl).pipe(
       map((data: Item[]) => {
       return data.filter((res: Item) => res.name.includes(term));
-        
       }),
       tap(filteredItems => {
         this.cacheStore.byItem.items = filteredItems;
