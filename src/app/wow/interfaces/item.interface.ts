@@ -2,7 +2,6 @@ import { AdditionalStats } from "./additionalStats.interface";
 import { Stats } from "./stats.interface";
 
 export interface Item {
-  filter(arg0: (item: any) => boolean): any;
   name: string,
   itemLvl: number,
   damage: string,

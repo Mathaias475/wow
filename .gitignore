@@ -5,3 +5,4 @@ package-lock.kson
 src/assets/.DS_Store
 .DS_Store
 .angular
+node_modules

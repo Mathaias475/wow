@@ -1,9 +1,12 @@
 <section class="page section" style="background-image: url('{{ bgImg }}');">
-  <div class="flex flex-col gap-6">
+  <div *ngIf="!showItem" class="flex flex-col gap-6">
     <wow-search placeholder="Buscar item" (onValue)="searchItem($event)" />
     <div class="grid grid-cols-3 gap-5">
-      <div *ngFor="let item of items; let i = index" [ngClass]="{'fade-in': i >= 0}">
-        <div class="card">
+      <div
+        *ngFor="let item of items; let i = index"
+        [ngClass]="{ 'fade-in': i >= 0 }"
+      >
+        <div (click)="selectItem(item)" class="card hover:shadow-[{{getBoxShadowColor(item.rare)}}] shadow-3xl">
           <div class="card__icon">
             <img [src]="item.icon" />
           </div>
@@ -11,6 +14,16 @@
             {{ item.name }}
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showItem" class="info">
+    <div class="card">
+      <div class="card__icon">
+        <img [src]="selectedItem.icon" />
+      </div>
+      <div class="{{ getColorName(selectedItem.rare) }}">
+        {{ selectedItem.name }}
       </div>
     </div>
   </div>
