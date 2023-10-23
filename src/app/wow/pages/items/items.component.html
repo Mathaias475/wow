@@ -6,7 +6,12 @@
         *ngFor="let item of items; let i = index"
         [ngClass]="{ 'fade-in': i >= 0 }"
       >
-        <div (click)="selectItem(item)" class="card hover:shadow-[{{getBoxShadowColor(item.rare)}}] shadow-3xl">
+        <div
+          (click)="selectItem(item)"
+          class="card hover:cursor-hover hover:shadow-[{{
+            getBoxShadowColor(item.rare)
+          }}] shadow-3xl"
+        >
           <div class="card__icon">
             <img [src]="item.icon" />
           </div>
@@ -17,14 +22,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="showItem" class="info">
-    <div class="card">
-      <div class="card__icon">
-        <img [src]="selectedItem.icon" />
-      </div>
-      <div class="{{ getColorName(selectedItem.rare) }}">
-        {{ selectedItem.name }}
-      </div>
-    </div>
+  <div *ngIf="showItem">
+   <wow-info [(show)]="showItem" [selectedItem]="selectedItem"></wow-info>
   </div>
 </section>

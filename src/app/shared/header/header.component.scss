@@ -6,18 +6,28 @@
     opacity: 1;
   }
 }
+.stone {
+  @apply w-9 h-9;
+  &:hover {
+    cursor: url('/assets/icons/cursor-hover.png'), auto;
+  }
+}
 .dropdown {
   &__arrow {
     @apply w-8 h-8;
     transition: all 0.3s cubic-bezier(1, -1.26, 0.81, 1.71);
+    &:hover {
+      cursor: url('/assets/icons/cursor-hover.png'), auto;
+    }
   }
   &__menu {
-    @apply fixed rounded-md w-48 bg-[#050A0F] z-[-10] right-[65px] top-[95px] opacity-0;
+    @apply fixed rounded-md w-48 bg-[#050A0F] z-[-10] right-[35px] top-[60px] opacity-0;
     transition: opacity 0.5s ease-in-out;
     &__item {
-      @apply flex gap-3 p-5 cursor-pointer items-center;
+      @apply flex gap-3 p-5 items-center;
       &:hover{
         background: linear-gradient(to right, black, #82830A, black);
+        cursor: url('/assets/icons/cursor-hover.png'), auto;
       }
     }
   }

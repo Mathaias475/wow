@@ -1,8 +1,10 @@
 @mixin card {
-  @apply p-4 h-fit flex items-center gap-2 col-span-1 cursor-pointer;
+  @apply p-4 h-fit flex items-center gap-2 col-span-1;
   background-color: rgba($color: #141313, $alpha: 0.5);
-  transition: width .5s ease-in-out, height .5s ease-in-out;
   border: 2px solid #6F6C6E;
+  &:hover {
+    cursor: url('/assets/icons/cursor-hover.png'), auto;
+  }
   &__icon {
     @apply w-10 h-10;
   }
@@ -16,4 +18,14 @@
 }
 .card {
   @include card;
+}
+.card-info {
+  @include card;
+  @apply opacity-0;
+  transition: opacity 1s ease-in-out;
+}
+.opacity {
+  transform: translateX(30px);
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 }

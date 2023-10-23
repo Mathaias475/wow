@@ -1,7 +1,7 @@
 <div class="home page section" style="background-image: url('{{bgImg}}');">
   <div class="cards">
     <div *ngFor="let card of cards">
-      <div class="cards__item" [class.show]="showCards">
+      <div class="cards__item " [class.show]="showCards">
         <img [src]="card.icon" class="cards__item__icon" />
         {{ card.text }}
       </div>

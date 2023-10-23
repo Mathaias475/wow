@@ -27,7 +27,8 @@
 .shadow-3xl {
 --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     --tw-shadow-colored: 0 4px 21px 9px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);}
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
 .align {
   display: flex;
   justify-content: center;
@@ -36,3 +37,10 @@
 .section {
   padding: 90px 50px 50px 50px;
 }
+.custom-cursor {
+  cursor: url('/assets/icons/cursor.png'), auto;
+}
+.not-allowed {
+  cursor: not-allowed;
+}
+

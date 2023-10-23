@@ -4,7 +4,6 @@ import { NavigationEnd, Router } from "@angular/router";
 @Component({
   selector: "app-wow",
   templateUrl: "./wow.component.html",
-  styleUrls: ['./wow.component.scss']
 })
 export class WowComponent implements OnInit{
   
