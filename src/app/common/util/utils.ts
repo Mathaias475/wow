@@ -45,5 +45,44 @@ export const getColorBoxShadowByRarity = (rarity: string): string => {
       color = "#FAFAFB";
       break;
   }
-  return color!;
-}
+  return color;
+};
+
+export const getColorClassByName = (name: string): string => {
+  let color;
+  switch (name) {
+    case "Guerrero":
+      color = "#96775A";
+      break;
+    case "Paladin":
+      color = "#B96E9E";
+      break;
+    case "Caballero de la Muerte":
+      color = "#A91C33";
+      break;
+    case "Brujo":
+      color = "#8788EE";
+      break;
+    case "Druida":
+      color = "#F2780C";
+      break;
+    case "Cazador":
+      color = "#A9D372";
+      break;
+    case "Sacerdote":
+      color = "#FFFFFF";
+      break;
+    case "Picaro":
+      color = "#FEF468";
+      break;
+    case "Chaman":
+      color = "#0086FF";
+      break;
+    case "Mago":
+      color = "#40C6EB";
+      break;
+    default:
+      color = "#FFFFFF";
+  }
+  return color;
+};

@@ -1,51 +1,83 @@
 <div class="flex flex-col gap-4">
-  <wow-button width="165px" label="Atras"  (click)="goBack()"/>
+  <wow-button width="165px" label="Atras" (click)="goBack()" />
   <div class="info">
-      <div class="card">
-        <div class="card__icon">
-          <img [src]="selectedItem.icon" />
+    <div class="card">
+      <div class="card__icon">
+        <img [src]="selectedItem.icon" />
+      </div>
+      <div class="flex flex-col w-full">
+        <div class="{{ getColorName(selectedItem.rare) }}">
+          {{ selectedItem.name }}
         </div>
-        <div class="flex flex-col w-full">
-          <div class="{{ getColorName(selectedItem.rare) }}">
-            {{ selectedItem.name }}
-          </div>
-          <div class="text-[#C1A008]">
-            Nivel de objeto {{selectedItem.itemLvl}}
-          </div>
-          <div class="{{ getColorName(selectedItem.rare) }}">
-            {{ selectedItem.rare }}
-          </div>
-          <div class="flex justify-between">
-            <div class="text-[#C1C2C7]">
-              {{ selectedItem.weaponHands }}
-            </div>
-            <div class="text-[#C1C2C7]">
-              {{ selectedItem.weaponType }}
-            </div>
-          </div>
-          <div *ngIf="selectedItem.weaponType" class="flex justify-between">
-            <div class="text-[#C1C2C7]">
-              {{ selectedItem.damage }} Daño
-            </div>
-            <div class="text-[#C1C2C7]">
-              Veloc. {{ selectedItem.weaponSpeed }}
-            </div>
+        <div class="text-[#C1A008]">
+          Nivel de objeto {{ selectedItem.itemLvl }}
+        </div>
+        <div class="{{ getColorName(selectedItem.rare) }}">
+          {{ selectedItem.rare }}
+        </div>
+        <div class="flex justify-between">
+          <div class="text-[#C1C2C7]">
+            {{ selectedItem.weaponHands }}
           </div>
           <div class="text-[#C1C2C7]">
-            ({{ selectedItem.damagePerSecond }}) daño por segundo
-          </div>
-          <div class="text-[#C1C2C7]" *ngFor="let stat of selectedItem.stats">
-            +{{stat.value}} {{stat.name}} 
-          </div>
-          <div *ngFor="let socket of selectedItem.jewelerSockets" class="flex flex-col">
-            <div class="flex">
-              <img class="w-6 h-6" src="/assets/img/jeweler-sockets/{{socket}}.png" />
-               <span class="text-[#466076]">
-                 {{defineJewelerLabel(socket)}}
-               </span>
-            </div>
+            {{ selectedItem.itemType }}
           </div>
         </div>
+        <div *ngIf="selectedItem.isArmor" class="flex justify-between">
+          <div class="text-[#C1C2C7]">{{ selectedItem.damage }} Daño</div>
+          <div class="text-[#C1C2C7]">
+            Veloc. {{ selectedItem.weaponSpeed }}
+          </div>
+        </div>
+        <div *ngIf="selectedItem.itemType" class="text-[#C1C2C7]">
+          ({{ selectedItem.damagePerSecond }}) daño por segundo
+        </div>
+        <div class="text-[#C1C2C7]" *ngFor="let stat of selectedItem.stats">
+          {{ stat.value }} {{ stat.name }}
+        </div>
+        <div *ngIf="selectedItem.socketBonus" class="py-3">
+        <div
+          *ngFor="let socket of selectedItem.jewelerSockets"
+          class="flex flex-col"
+        >
+          <div class="flex">
+            <img
+              class="w-6 h-6"
+              src="/assets/img/jeweler-sockets/{{ socket }}.png"
+            />
+            <span class="text-[#466076]">
+              {{ defineJewelerLabel(socket) }}
+            </span>
+          </div>
+        </div>
+        <div class="text-[#466076]">
+          Bonus ranura: {{ selectedItem.socketBonus }}
+        </div>
       </div>
+        <div *ngIf="selectedItem.avaliablesClasses" class="flex gap-1 flex-wrap text-[#C1C2C7]">
+          Clases:
+          <div
+            class="flex"
+            *ngFor="
+              let avaliableClass of selectedItem.avaliablesClasses
+            "
+          >
+            <span class="text-[{{ getColorClass(avaliableClass) }}]">
+              {{ avaliableClass }} </span
+            >
+          </div>
+        </div>
+        <div class="text-[#C1C2C7]">
+          Necesitas ser de nivel {{ selectedItem.lvlRequired }}
+        </div>
+        <div
+          class="text-[#1AC20B]"
+          *ngFor="let extraStat of selectedItem.additionalStats"
+        >
+          {{ extraStat.stat }}
+        </div>
+        <span *ngIf="selectedItem.descriptionText" class="text-[#FFD100]">"{{selectedItem.descriptionText}}"</span>
+      </div>
+    </div>
   </div>
 </div>

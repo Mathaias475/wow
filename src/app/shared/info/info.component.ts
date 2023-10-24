@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { getColorNameByRarity } from 'src/app/common/util/utils';
+import { getColorClassByName, getColorNameByRarity } from 'src/app/common/util/utils';
 import { Item } from 'src/app/wow/interfaces/item.interface';
 
 @Component({
@@ -15,12 +15,13 @@ export class InfoComponent implements OnInit {
     name: '',
     itemLvl: 0,
     damage: '',
+    isArmor: false,
     stats: [],
     descriptionText: '',
-    gearScore: 0,
+    exhibition: '',
     rare: '',
     additionalStats: [],
-    weaponType: '',
+    itemType: '',
     weaponSpeed: '',
     weaponHands: '',
     jewelerSockets: [],
@@ -38,13 +39,10 @@ export class InfoComponent implements OnInit {
     switch(colorSocket) {
       case 'red':
         return 'Ranura roja';
-        break;
       case 'blue':
         return 'Ranura azul';
-        break;
       case 'yellow':
         return 'Ranura amarilla';
-        break;
        default:
         return ''; 
     }
@@ -54,13 +52,14 @@ export class InfoComponent implements OnInit {
     this.selectedItem = {
       name: '',
       itemLvl: 0,
+      exhibition: '',
+      isArmor: false,
       damage: '',
       stats: [],
       descriptionText: '',
-      gearScore: 0,
       rare: '',
       additionalStats: [],
-      weaponType: '',
+      itemType: '',
       weaponSpeed: '',
       weaponHands: '',
       jewelerSockets: [],
@@ -72,6 +71,9 @@ export class InfoComponent implements OnInit {
     }
   }
 
+  getColorClass(name: string) {
+    return getColorClassByName(name);
+  }
   getColorName(rarity: string) {
     return getColorNameByRarity(rarity);
    }
