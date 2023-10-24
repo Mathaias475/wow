@@ -11,7 +11,7 @@ export interface Item {
   rare: string,
   additionalStats: AdditionalStats[],
   weaponType: string,
-  weaponSpeed: number,
+  weaponSpeed: string,
   weaponHands: string,
   jewelerSockets: string[],
   damagePerSecond: number,

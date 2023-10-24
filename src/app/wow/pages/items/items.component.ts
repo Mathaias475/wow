@@ -24,7 +24,7 @@ export class ItemsComponent implements OnInit{
     rare: "",
     additionalStats: [],
     weaponType: "",
-    weaponSpeed: 0,
+    weaponSpeed: '',
     weaponHands: "",
     jewelerSockets: [],
     damagePerSecond: 0,

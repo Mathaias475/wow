@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WoWRoutes } from '../../wow.routes';
 import { BackgroundService } from 'src/app/common/services/background.service';
+import { Item } from '../../interfaces/item.interface';
 
 
 @Component({

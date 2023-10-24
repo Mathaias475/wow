@@ -20,9 +20,10 @@ private itemsUrl = '/assets/json-data/items.json'
   };
 
   getItems(term: string): Observable<Item[]> {
+    term = term.toLowerCase();
     return this.http.get<Item[]>(this.itemsUrl).pipe(
       map((data: Item[]) => {
-      return data.filter((res: Item) => res.name.includes(term));
+      return data.filter((res: Item) => res.name.toLowerCase().includes(term));
       }),
       tap(filteredItems => {
         this.cacheStore.byItem.items = filteredItems;
@@ -31,4 +32,3 @@ private itemsUrl = '/assets/json-data/items.json'
     );
   }
 }
-/*  */

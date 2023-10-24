@@ -5,8 +5,12 @@
     "damage": "954 - 1592",
     "stats": [
       {
-        "Fuerza": 223,
-        "Aguante": 198
+        "name": "fuerza",
+        "value": 223
+      },
+      {
+        "name": "aguante",
+        "value": 198
       }
     ],
     "descriptionText": "Hacha agonia de las sombras",
@@ -26,13 +30,13 @@
         "name": "Tus ataques cuerpo a cuerpo tienen la probabilidad de drenar un trozo de alma, lo que te otorga 30 p. de fuerza. Cuando hayas acumulado 10 trozos de alma, liberarás Pesadilla de caos, que inflige 1900 to 2100 p. de daño de las Sombras repartido entre todos los enemigos en un radio de 15 m y te otorga 270 p. de fuerza durante 10 sec."
       }
     ],
-    "weaponSpeed": 3.7,
-    "weaponsHands": "Two-Hands",
+    "weaponSpeed": "3.70",
+    "weaponHands": "Dos manos",
     "jewelerSockets": ["red", "red", "red"],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
     "socketBonus": "+8 Fuerza",
     "lvlRequired": 80,
-    "damagePerSecond": 344.1,
+    "damagePerSecond": 344.05,
     "icon": "/assets/img/items/shadowmourne.png"
   },
   {
@@ -60,7 +64,7 @@
       }
     ],
     "weaponSpeed": 3.6,
-    "weaponsHands": "Two-Hands",
+    "weaponHands": "Dos manos",
     "jewelerSockets": ["red", "red", "red"],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
     "socketBonus": "+8 Fuerza",
@@ -93,7 +97,7 @@
       }
     ],
     "weaponSpeed": 3.6,
-    "weaponsHands": "Two-Hands",
+    "weaponHands": "Dos manos",
     "jewelerSockets": [],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
     "socketBonus": "",
@@ -121,7 +125,7 @@
       }
     ],
     "weaponSpeed": 3.40,
-    "weaponsHands": "Two-Hands",
+    "weaponHands": "Dos manos",
     "jewelerSockets": ["red", "blue"],
     "avaliablesClasses": ["Guerrero", "Paladin", "Caballero de la Muerte"],
     "socketBonus": "+ 6 fuerza",
@@ -144,7 +148,7 @@
       }
     ],
     "weaponSpeed": null,
-    "weaponsHands": null,
+    "weaponHands": null,
     "jewelerSockets": null,
     "avaliablesClasses": null,
     "socketBonus": null,
@@ -169,7 +173,7 @@
       }
     ],
     "weaponSpeed": null,
-    "weaponsHands": null,
+    "weaponHands": null,
     "jewelerSockets": null,
     "avaliablesClasses": ["Sacerdote", "Brujo", "Mago"],
     "socketBonus": null,

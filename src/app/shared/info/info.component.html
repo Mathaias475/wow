@@ -1,3 +1,51 @@
-<div (click)="goBack()">
-click here to back
+<div class="flex flex-col gap-4">
+  <wow-button width="165px" label="Atras"  (click)="goBack()"/>
+  <div class="info">
+      <div class="card">
+        <div class="card__icon">
+          <img [src]="selectedItem.icon" />
+        </div>
+        <div class="flex flex-col w-full">
+          <div class="{{ getColorName(selectedItem.rare) }}">
+            {{ selectedItem.name }}
+          </div>
+          <div class="text-[#C1A008]">
+            Nivel de objeto {{selectedItem.itemLvl}}
+          </div>
+          <div class="{{ getColorName(selectedItem.rare) }}">
+            {{ selectedItem.rare }}
+          </div>
+          <div class="flex justify-between">
+            <div class="text-[#C1C2C7]">
+              {{ selectedItem.weaponHands }}
+            </div>
+            <div class="text-[#C1C2C7]">
+              {{ selectedItem.weaponType }}
+            </div>
+          </div>
+          <div *ngIf="selectedItem.weaponType" class="flex justify-between">
+            <div class="text-[#C1C2C7]">
+              {{ selectedItem.damage }} Daño
+            </div>
+            <div class="text-[#C1C2C7]">
+              Veloc. {{ selectedItem.weaponSpeed }}
+            </div>
+          </div>
+          <div class="text-[#C1C2C7]">
+            ({{ selectedItem.damagePerSecond }}) daño por segundo
+          </div>
+          <div class="text-[#C1C2C7]" *ngFor="let stat of selectedItem.stats">
+            +{{stat.value}} {{stat.name}} 
+          </div>
+          <div *ngFor="let socket of selectedItem.jewelerSockets" class="flex flex-col">
+            <div class="flex">
+              <img class="w-6 h-6" src="/assets/img/jeweler-sockets/{{socket}}.png" />
+               <span class="text-[#466076]">
+                 {{defineJewelerLabel(socket)}}
+               </span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>

@@ -24,9 +24,9 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.debouncerSubscription?.unsubscribe();
     
   }
-
-onSearch( searchTerm: string ) {
-  this.debouncer.next(searchTerm);
-}
+  
+  onSearch( searchTerm: string ) {
+    this.debouncer.next(searchTerm);
+  }
 
 }
