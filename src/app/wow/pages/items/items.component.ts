@@ -55,10 +55,9 @@ getBoxShadowColor(rarity: string) {
   return getColorBoxShadowByRarity(rarity);
 }
 
-  searchItem(name: string) {
-    this.itemsService.getItems(name).subscribe((res) => {
-      this.items = res;
-    });
+ async searchItem(name: string) {
+  const response = await this.itemsService.getItems(name);
+  this.items = response ? response : [];
   }
   selectItem(item: Item) {
     this.selectedItem = item;
