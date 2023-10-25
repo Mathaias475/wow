@@ -1,9 +1,7 @@
 node_modules
-package-lock.kson
+package-lock.json
 .angular
 .angular-webpack
 src/assets/.DS_Store
 .DS_Store
-.angular
-node_modules
 firebase.config.ts
