@@ -16,20 +16,23 @@
           {{ selectedItem.rare }}
         </div>
         <div class="flex justify-between">
-          <div class="text-[#C1C2C7]">
+          <div *ngIf="!selectedItem.isArmor" class="text-[#C1C2C7]">
             {{ selectedItem.weaponHands }}
+          </div>
+          <div *ngIf="selectedItem.isArmor" class="text-[#C1C2C7]">
+            {{ selectedItem.itemSlot }}
           </div>
           <div class="text-[#C1C2C7]">
             {{ selectedItem.itemType }}
           </div>
         </div>
-        <div *ngIf="selectedItem.isArmor" class="flex justify-between">
+        <div *ngIf="!selectedItem.isArmor" class="flex justify-between">
           <div class="text-[#C1C2C7]">{{ selectedItem.damage }} Daño</div>
           <div class="text-[#C1C2C7]">
             Veloc. {{ selectedItem.weaponSpeed }}
           </div>
         </div>
-        <div *ngIf="selectedItem.itemType" class="text-[#C1C2C7]">
+        <div *ngIf="!selectedItem.isArmor" class="text-[#C1C2C7]">
           ({{ selectedItem.damagePerSecond }}) daño por segundo
         </div>
         <div class="text-[#C1C2C7]" *ngFor="let stat of selectedItem.stats">
@@ -67,7 +70,7 @@
             >
           </div>
         </div>
-        <div class="text-[#C1C2C7]">
+        <div *ngIf="selectedItem.lvlRequired" class="text-[#C1C2C7]">
           Necesitas ser de nivel {{ selectedItem.lvlRequired }}
         </div>
         <div

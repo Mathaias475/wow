@@ -23,6 +23,7 @@ export class ItemsComponent implements OnInit{
     exhibition: '',
     isArmor: false,
     rare: "",
+    itemSlot: "",
     additionalStats: [],
     itemType: "",
     weaponSpeed: '',
@@ -41,7 +42,6 @@ export class ItemsComponent implements OnInit{
   ) {}
 
  ngOnInit(): void {
-
   (this.itemsService.cacheStore.byItem.term != '') ?
   this.items = this.itemsService.cacheStore.byItem.items :
    this.searchItem('');

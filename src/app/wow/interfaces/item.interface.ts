@@ -10,6 +10,7 @@ export interface Item {
   descriptionText: string,
   exhibition: string,
   rare: string,
+  itemSlot: string,
   additionalStats: AdditionalStats[],
   itemType: string,
   weaponSpeed: string,
