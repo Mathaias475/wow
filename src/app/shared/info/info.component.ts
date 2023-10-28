@@ -19,6 +19,11 @@ export class InfoComponent implements OnInit {
     stats: [],
     descriptionText: '',
     exhibition: '',
+    loot: {
+      type: "",
+      instance: "",
+      boss: ""
+    },
     rare: '',
     additionalStats: [],
     itemType: '',
@@ -58,6 +63,11 @@ export class InfoComponent implements OnInit {
       damage: '',
       stats: [],
       descriptionText: '',
+      loot: {
+        type: "",
+        instance: "",
+        boss: ""
+      },
       rare: '',
       additionalStats: [],
       itemType: '',

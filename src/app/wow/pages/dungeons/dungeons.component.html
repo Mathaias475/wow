@@ -1,1 +1,58 @@
-<p>dungeons works!</p>
+<section
+  class="page section"
+  *ngIf="!showInstance && !showBoss"
+  style="background-image: url('{{ bgImg }}');"
+>
+  <wow-search
+    class="text-white"
+    label="Buscar calabozo"
+    (onValue)="searchDungeon($event)"
+  />
+  <div class="grid grid-cols-3 gap-5">
+    <div
+      *ngFor="let dungeon of dungeons; let i = index"
+      [ngClass]="{ 'fade-in': i >= 0 }"
+    >
+      <div (click)="selectDungeon(dungeon)" class="card text-white">
+        <div class="card__icon">
+          <img [src]="dungeon.locationImg" />
+        </div>
+        {{ dungeon.name }}
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  *ngIf="showInstance"
+  class="page section"
+  style="background-image: url('{{ selectedDungeon.background }}');"
+>
+  <div *ngIf="!showBoss">
+    <wow-search
+      class="text-white"
+      label="Buscar jefe"
+      (onValue)="searchBoss($event)"
+    />
+    <div class="grid grid-cols-3 gap-5">
+      <div
+        *ngFor="let boss of bosses; let i = index"
+        [ngClass]="{ 'fade-in': i >= 0 }"
+      >
+        <div (click)="selectBoss(boss)" class="card text-white">
+          <div class="card__icon">
+            <img [src]="boss.img" />
+          </div>
+          {{ boss.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showBoss">
+    loot: 
+    <div class="card text-white">
+      <div (click)="goToItems(item)" *ngFor="let item of selectedBoss.loot">
+        {{item.name}}
+      </div>
+    </div>
+  </div>
+</section>

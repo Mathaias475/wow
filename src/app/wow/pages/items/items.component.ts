@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { BackgroundService } from "src/app/common/services/background.service";
-import { ItemsService } from "src/app/common/services/items.service";
+import { DataService } from "src/app/common/services/data.service";
 import { Item } from '../../interfaces/item.interface';
 import { getColorNameByRarity, getColorBoxShadowByRarity } from "src/app/common/util/utils";
+import { ItemsService } from "src/app/common/services/items.service";
 
 @Component({
   selector: "app-items",
@@ -11,7 +12,7 @@ import { getColorNameByRarity, getColorBoxShadowByRarity } from "src/app/common/
 })
 export class ItemsComponent implements OnInit{
 
-  bgImg = this.backgroundService.getRandomBackground("items", 2);
+  bgImg = this.backgroundService.getBackground("items", 2);
   items : Item[] = [];
   showItem = false;
   selectedItem: Item = {
@@ -20,6 +21,11 @@ export class ItemsComponent implements OnInit{
     damage: "",
     stats: [],
     descriptionText: "",
+    loot: {
+      type: "",
+      instance: "",
+      boss: ""
+    },
     exhibition: '',
     isArmor: false,
     rare: "",
@@ -38,12 +44,16 @@ export class ItemsComponent implements OnInit{
 
   constructor(
     private backgroundService: BackgroundService,
+    private dataService: DataService,
     private itemsService: ItemsService
   ) {}
 
  ngOnInit(): void {
-  (this.itemsService.cacheStore.byItem.term != '') ?
-  this.items = this.itemsService.cacheStore.byItem.items :
+  let itemFromBoss = this.itemsService.getItem();
+  this.selectItem(itemFromBoss);
+
+  (this.dataService.cacheStore.byItem.term != '') ?
+  this.items = this.dataService.cacheStore.byItem.items :
    this.searchItem('');
 }
 
@@ -56,7 +66,7 @@ getBoxShadowColor(rarity: string) {
 }
 
  async searchItem(name: string) {
-  const response = await this.itemsService.getItems(name);
+  const response = await this.dataService.getData(name, "Items");
   this.items = response ? response : [];
   }
   selectItem(item: Item) {

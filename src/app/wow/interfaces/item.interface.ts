@@ -14,6 +14,11 @@ export interface Item {
   additionalStats: AdditionalStats[],
   itemType: string,
   weaponSpeed: string,
+  loot: {
+    type: string,
+    instance: string,
+    boss: string
+  }
   weaponHands: string,
   jewelerSockets: string[],
   damagePerSecond: number,

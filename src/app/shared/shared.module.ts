@@ -11,7 +11,5 @@ import { InfoModule } from './info/info.module';
 @NgModule({
   exports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule, InfoModule],
   imports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule, InfoModule],
-  declarations: [
-  ],
 })
 export class SharedModule { }

@@ -1,0 +1,21 @@
+@mixin card {
+  @apply p-4 h-fit flex items-center gap-2 col-span-1;
+  background-color: rgba($color: #141313, $alpha: 0.8);
+  border: 2px solid #6F6C6E;
+  &:hover {
+    cursor: url('/assets/icons/cursor-hover.png'), auto;
+  }
+  &__icon {
+    @apply w-10 h-10;
+  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 1.5s;
+}
+.card {
+  @include card;
+}

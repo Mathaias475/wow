@@ -59,7 +59,7 @@ export class HeaderComponent {
       this.setIconForOption(this.options, 0, 'bags', 4);
       this.setIconForOption(this.options, 1, 'classes', 12);
       this.setIconForOption(this.options, 2, 'professions', 15);
-      this.setIconForOption(this.options, 3, 'dungeon-rols', 3);
+      this.setIconForOption(this.options, 3, 'dungeon/rols', 3);
       this.setIconForOption(this.options, 4, 'battlegrounds', 2);
       this.setIconForOption(this.options, 5, 'raids', 3);
       setTimeout(()=>{

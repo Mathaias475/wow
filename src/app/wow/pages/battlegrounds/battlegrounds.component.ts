@@ -10,7 +10,7 @@ import { BackgroundService } from 'src/app/common/services/background.service';
 })
 export class BattlegroundsComponent implements OnInit {
 
-  bgImg = this.backgroundService.getRandomBackground(this.router.url, 1);
+  bgImg = this.backgroundService.getBackground(this.router.url, 1);
   routes = WoWRoutes.ROUTES;
   constructor(private router: Router, private backgroundService: BackgroundService) { }
   ngOnInit(): void {

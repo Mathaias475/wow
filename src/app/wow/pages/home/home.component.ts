@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit{
 
   routes = WoWRoutes.ROUTES;
   constructor(private router: Router, private backgroundService: BackgroundService) { }
-  bgImg = this.backgroundService.getRandomBackground('home', 3);
+  bgImg = this.backgroundService.getBackground('home', 3);
   cards = [
     {
       icon: '',
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit{
     this.setIconForCard(this.cards, 0, 'bags', 4);
     this.setIconForCard(this.cards, 1, 'classes', 12);
     this.setIconForCard(this.cards, 2, 'professions', 15);
-    this.setIconForCard(this.cards, 3, 'dungeon-rols', 3);
+    this.setIconForCard(this.cards, 3, 'dungeon/rols', 3);
     this.setIconForCard(this.cards, 4, 'battlegrounds', 2);
     this.setIconForCard(this.cards, 5, 'raids', 3);
     setTimeout(() =>{
