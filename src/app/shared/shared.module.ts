@@ -4,12 +4,11 @@ import { HeaderModule } from './header/header.module';
 import { TooltipModule } from './tooltip/tooltip.module';
 import { SearchModule } from './search/search.module';
 import { LoadingModule } from './loading/loading.module';
-import { InfoModule } from './info/info.module';
 
 
 
 @NgModule({
-  exports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule, InfoModule],
-  imports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule, InfoModule],
+  exports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule],
+  imports: [ButtonModule, HeaderModule, TooltipModule, SearchModule, LoadingModule],
 })
 export class SharedModule { }

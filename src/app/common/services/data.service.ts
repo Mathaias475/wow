@@ -13,6 +13,20 @@ export class DataService {
   private app = initializeApp(firebaseConfig);
   private db = getDatabase(this.app);
 
+  private setLocalStorage() {
+    localStorage.setItem('cacheStore',JSON.stringify(this.cacheStore));
+  }
+
+  private getLocalStorage() {
+    if(!localStorage.getItem('cacheStore')) return;
+    this.cacheStore =JSON.parse( localStorage.getItem('cacheStore')!);
+  }
+
+  constructor() {
+    this.getLocalStorage();
+  }
+
+
   cacheStore: CacheStore = {
     byItem: {
       term: "",
@@ -48,7 +62,6 @@ export class DataService {
     collection: "Bosses"
   ): Promise<Boss[] | void>;
   
-
   async getData(term: string, collection: string): Promise<Item[] | Instance[] | Boss[] | void> {
     term = term.toLowerCase();
     const dbref = ref(this.db);
@@ -65,6 +78,7 @@ export class DataService {
           );
           this.cacheStore.byItem.items = filteredItems;
           this.cacheStore.byItem.term = term;
+          this.setLocalStorage(); 
           return filteredItems;
         } else if (collection === "Dungeons") {
           const filteredDungeons = data.filter((res: Instance) =>
@@ -72,6 +86,7 @@ export class DataService {
           );
           this.cacheStore.byDungeon.dungeons = filteredDungeons;
           this.cacheStore.byDungeon.term = term;
+          this.setLocalStorage(); 
           return filteredDungeons;
         } else if (collection === "Raids") {
           const filteredRaids = data.Raids.filter((res: Instance) =>
@@ -79,6 +94,7 @@ export class DataService {
           );
           this.cacheStore.byRaid.raids = filteredRaids;
           this.cacheStore.byRaid.term = term;
+          this.setLocalStorage(); 
           return filteredRaids;
         } else if (collection === "Bosses") {
           const filteredBosses = data.filter((res: Boss) =>
@@ -86,6 +102,7 @@ export class DataService {
           );
           this.cacheStore.byBoss.bosses = filteredBosses;
           this.cacheStore.byBoss.term = term;
+          this.setLocalStorage(); 
           return filteredBosses;
         }
       }

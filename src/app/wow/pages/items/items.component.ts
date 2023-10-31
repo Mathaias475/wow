@@ -15,6 +15,7 @@ export class ItemsComponent implements OnInit{
   bgImg = this.backgroundService.getBackground("items", 2);
   items : Item[] = [];
   showItem = false;
+  filter = '';
   selectedItem: Item = {
     name: "",
     itemLvl: 0,
@@ -51,7 +52,7 @@ export class ItemsComponent implements OnInit{
  ngOnInit(): void {
   let itemFromBoss = this.itemsService.getItem();
   this.selectItem(itemFromBoss);
-
+  this.filter = this.dataService.cacheStore.byItem.term;
   (this.dataService.cacheStore.byItem.term != '') ?
   this.items = this.dataService.cacheStore.byItem.items :
    this.searchItem('');
@@ -71,6 +72,6 @@ getBoxShadowColor(rarity: string) {
   }
   selectItem(item: Item) {
     this.selectedItem = item;
-    this.showItem = true;
+    this.showItem = !this.showItem;
   }
 }

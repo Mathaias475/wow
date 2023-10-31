@@ -17,7 +17,34 @@ export class DungeonsComponent implements OnInit {
   routes = WoWRoutes.ROUTES;
   dungeons: Instance[] = [];
   bosses: Boss[] = [];
+  filter = '';
   showInstance = false;
+  itemFromItems: Item = {
+    name: "",
+    itemLvl: 0,
+    damage: "",
+    stats: [],
+    isArmor: false,
+    descriptionText: "",
+    exhibition: "",
+    rare: "",
+    itemSlot: "",
+    additionalStats: [],
+    itemType: "",
+    weaponSpeed: "",
+    loot: {
+      type: "",
+      instance: "",
+      boss: "",
+    },
+    weaponHands: "",
+    jewelerSockets: [],
+    damagePerSecond: 0,
+    lvlRequired: 0,
+    avaliablesClasses: [],
+    socketBonus: "",
+    icon: "",
+  };
   showBoss = false;
   selectedBoss: Boss = {
     name: "",
@@ -48,23 +75,50 @@ export class DungeonsComponent implements OnInit {
     private itemsService: ItemsService
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.filter = this.dataService.cacheStore.byDungeon.term;
     this.dataService.cacheStore.byDungeon.term != ""
       ? (this.dungeons = this.dataService.cacheStore.byDungeon.dungeons)
       : this.searchDungeon("");
     this.dataService.cacheStore.byBoss.term != ""
       ? (this.bosses = this.dataService.cacheStore.byBoss.bosses)
       : this.searchBoss("");
+    this.itemFromItems = this.itemsService.getItem();
+    if (this.itemFromItems) {
+      let dungeon;
+      let boss;
+      try {
+        const resultDungeon = await this.searchDungeon(
+          this.itemFromItems.loot.instance
+        );
+        if (Array.isArray(resultDungeon) && resultDungeon.length > 0) {
+          dungeon = resultDungeon[0];
+          this.selectDungeon(dungeon);
+
+          const resultBoss = await this.searchBoss(
+            this.itemFromItems.loot.boss
+          );
+          if (Array.isArray(resultBoss) && resultBoss.length > 0) {
+            boss = resultBoss[0];
+            this.selectBoss(boss);
+          }
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
   }
 
   async searchDungeon(name: string) {
     const response = await this.dataService.getData(name, "Dungeons");
     this.dungeons = response ? response : [];
+    return response;
   }
 
   async searchBoss(name: string) {
     const response = await this.dataService.getData(name, "Bosses");
     this.bosses = response ? response : [];
+    return response;
   }
   selectDungeon(dungeon: Instance) {
     this.selectedDungeon = dungeon;

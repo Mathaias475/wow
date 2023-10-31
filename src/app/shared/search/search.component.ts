@@ -11,7 +11,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   
   @Input() placeholder = '';
   @Output() onValue = new EventEmitter<string>();
-  value = this.dataService.cacheStore.byItem.term;
+  @Input() value = '';
   
   constructor(private dataService: DataService) {}
   private debouncerSubscription?: Subscription;
