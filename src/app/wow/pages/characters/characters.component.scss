@@ -1,0 +1,16 @@
+.class-icon {
+  &:hover {
+    cursor: url('/assets/icons/cursor-hover.png'), auto;
+  }
+}
+@mixin card {
+  @apply p-4 h-fit flex items-start gap-7 w-1/2;
+  background-color: rgba($color: #141313, $alpha: 0.8);
+  border: 2px solid #6F6C6E;
+  &__icon {
+    @apply w-20;
+  }
+}
+.card {
+  @include card;
+}

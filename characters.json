@@ -1,0 +1,62 @@
+[
+  {
+    "className": "Guerrero",
+    "classIcon": "/assets/img/characters/warrior.png",
+    "classHoverIcon": "/assets/img/characters/hover/warrior-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Caballero de la Muerte",
+    "classIcon": "/assets/img/characters/dk.png",
+    "classHoverIcon": "/assets/img/characters/hover/dk-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Sacerdote",
+    "classIcon": "/assets/img/characters/priest.png",
+    "classHoverIcon": "/assets/img/characters/hover/priest-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Chaman",
+    "classIcon": "/assets/img/characters/shaman.png",
+    "classHoverIcon": "/assets/img/characters/hover/shaman-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Druida",
+    "classIcon": "/assets/img/characters/druid.png",
+    "classHoverIcon": "/assets/img/characters/hover/druid-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Brujo",
+    "classIcon": "/assets/img/characters/warlock.png",
+    "classHoverIcon": "/assets/img/characters/hover/warlock-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Picaro",
+    "classIcon": "/assets/img/characters/rogue.png",
+    "classHoverIcon": "/assets/img/characters/hover/rogue-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Mago",
+    "classIcon": "/assets/img/characters/mage.png",
+    "classHoverIcon": "/assets/img/characters/hover/mage-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Paladin",
+    "classIcon": "/assets/img/characters/paladin.png",
+    "classHoverIcon": "/assets/img/characters/hover/paladin-hover.png",
+    "showHoverIcon": false
+  },
+  {
+    "className": "Cazador",
+    "classIcon": "/assets/img/characters/hunter.png",
+    "classHoverIcon": "/assets/img/characters/hover/hunter-hover.png",
+    "showHoverIcon": false
+  }
+]

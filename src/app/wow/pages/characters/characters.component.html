@@ -1,1 +1,29 @@
-<p>characters works!</p>
+<section
+  class="page section gap-4 flex flex-col"
+  style="background-image: url('{{ bgImg }}');"
+>
+  <wow-search placeholder="Buscar clase" (onValue)="searchCharacter($event)" />
+  <div class="flex flex-wrap gap-2">
+    <div
+    (mouseenter)="class.showHoverIcon = true"
+    (mouseleave)="class.showHoverIcon = false"
+      *ngFor="let class of characters"
+      class="card hover:cursor-hover hover:shadow-[{{
+        getColorClass(class.className)
+      }}] shadow-3xl"
+    >
+    <div class="flex gap-2 items-center justify-center"
+   >
+      <img
+      [ngClass]="{'w-11': class.showHoverIcon}"
+      class="class-icon col-span-1"
+      [src]="class.showHoverIcon ? class.classHoverIcon : class.classIcon"
+      class="w-9"
+      />
+      <p class="text-[{{ getColorClass(class.className) }}]">
+        {{ class.className }}
+      </p>
+    </div>
+    </div>
+  </div>
+</section>
