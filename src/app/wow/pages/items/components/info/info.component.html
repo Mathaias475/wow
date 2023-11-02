@@ -1,7 +1,11 @@
 <div class="flex flex-col gap-4">
-  <wow-button width="165px" label="Atras" (click)="goBack()" />
-  <wow-button *ngIf="selectedItem.loot" (click)="goToInstances(selectedItem)" width="165px" [label]="selectedItem.loot.type == 'raid' ? 'Ver en bandas' : 'Ver en calabozos'"/>
-  <div class="info">
+  <div class="flex gap-4">
+    <wow-button width="165px" label="Atras" (click)="goBack()" />
+    <wow-button *ngIf="selectedItem?.loot" (click)="goToInstances(selectedItem)" width="165px" [label]="selectedItem.loot.type == 'raid' ? 'Ver en bandas' : 'Ver en calabozos'"/>
+    <wow-button (click)="selectedItem.itemVersion = 'H'" width="165px" *ngIf="selectedItem?.loot?.type =='raid' && selectedItem.itemVersion == 'N'" label="Ver modo heroico"/> 
+    <wow-button (click)="selectedItem.itemVersion = 'N'" width="165px" *ngIf="selectedItem?.loot?.type =='raid' && selectedItem.itemVersion == 'H'" label="Ver modo normal"/>
+  </div>
+  <div *ngIf="selectedItem?.itemVersion == 'N'" class="info">
     <div class="card">
       <div class="card__icon">
         <img [src]="selectedItem.icon" />
@@ -9,6 +13,9 @@
       <div class="flex flex-col w-full">
         <div class="{{ getColorName(selectedItem.rare) }}">
           {{ selectedItem.name }}
+        </div>
+        <div *ngIf="selectedItem?.itemVersion == 'H'" class="text-[#1AC20B]">
+          Heroico
         </div>
         <div class="text-[#C1A008]">
           Nivel de objeto {{ selectedItem.itemLvl }}
@@ -83,7 +90,96 @@
         <span *ngIf="selectedItem.descriptionText" class="text-[#FFD100]">"{{selectedItem.descriptionText}}"</span>
       </div>
     </div>
-    <div class="card !w-fit">
+    <div *ngIf="selectedItem.exhibition" class="card !w-fit">
+      <img [src]="selectedItem.exhibition"/>
+    </div>
+  </div>
+  <div *ngIf="selectedItem.itemVersion == 'H'" class="info">
+    <div class="card">
+      <div class="card__icon">
+        <img [src]="selectedItem.icon" />
+      </div>
+      <div class="flex flex-col w-full">
+        <div class="{{ getColorName(selectedItem.rare) }}">
+          {{ selectedItem.name }}
+        </div>
+        <div *ngIf="selectedItem?.itemVersion == 'H'" class="text-[#1AC20B]">
+          Heroico
+        </div>
+        <div class="text-[#C1A008]">
+          Nivel de objeto {{ selectedItem.heroicItemLvl }}
+        </div>
+        <div class="{{ getColorName(selectedItem.rare) }}">
+          {{ selectedItem.rare }}
+        </div>
+        <div class="flex justify-between">
+          <div *ngIf="!selectedItem.isArmor" class="text-[#C1C2C7]">
+            {{ selectedItem.weaponHands }}
+          </div>
+          <div *ngIf="selectedItem.isArmor" class="text-[#C1C2C7]">
+            {{ selectedItem.itemSlot }}
+          </div>
+          <div class="text-[#C1C2C7]">
+            {{ selectedItem.itemType }}
+          </div>
+        </div>
+        <div *ngIf="!selectedItem.isArmor" class="flex justify-between">
+          <div class="text-[#C1C2C7]">{{ selectedItem.heroicDamage }} Daño</div>
+          <div class="text-[#C1C2C7]">
+            Veloc. {{ selectedItem.heroicWeaponSpeed }}
+          </div>
+        </div>
+        <div *ngIf="!selectedItem.isArmor" class="text-[#C1C2C7]">
+          ({{ selectedItem.heroicDamagePerSecond }}) daño por segundo
+        </div>
+        <div class="text-[#C1C2C7]" *ngFor="let stat of selectedItem.heroicStats">
+          {{ stat.value }} {{ stat.name }}
+        </div>
+        <div *ngIf="selectedItem.socketBonus" class="py-3">
+        <div
+          *ngFor="let socket of selectedItem.jewelerSockets"
+          class="flex flex-col"
+        >
+          <div class="flex">
+            <img
+              class="w-6 h-6"
+              src="/assets/img/jeweler-sockets/{{ socket }}.png"
+            />
+            <span class="text-[#466076]">
+              {{ defineJewelerLabel(socket) }}
+            </span>
+          </div>
+        </div>
+        <div class="text-[#466076]">
+          Bonus ranura: {{ selectedItem.socketBonus }}
+        </div>
+      </div>
+        <div *ngIf="selectedItem.avaliablesClasses" class="flex gap-1 flex-wrap text-[#C1C2C7]">
+          Clases:
+          <div
+            class="flex"
+            *ngFor="
+              let avaliableClass of selectedItem.avaliablesClasses
+            "
+          >
+            <span class="text-[{{ getColorClass(avaliableClass) }}]">
+              {{ avaliableClass }} </span
+            >
+          </div>
+        </div>
+        <div *ngIf="selectedItem.lvlRequired" class="text-[#C1C2C7]">
+          Necesitas ser de nivel {{ selectedItem.lvlRequired }}
+        </div>
+        <div
+          class="text-[#1AC20B]"
+          *ngFor="let extraStat of selectedItem.heroicAdditionalStats"
+        >
+          {{ extraStat.stat }}
+        </div>
+        <span *ngIf="selectedItem.descriptionText" class="text-[#FFD100]">"{{selectedItem.descriptionText}}"</span>
+      </div>
+    </div>
+    <div *ngIf="selectedItem.exhibition" class="card !w-fit">
       <img [src]="selectedItem.exhibition"/>
     </div>
   </div>

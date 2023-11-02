@@ -13,6 +13,7 @@ import { ProfessionsComponent } from './pages/professions/professions.component'
 import { WowRoutingModule } from './wow-routing.module';
 import { CommonModule } from '@angular/common';
 import { DungeonInfoComponent } from './pages/dungeons/components/dungeon-info/dungeon-info.component';
+import { BossComponent } from './pages/dungeons/components/boss/boss.component';
 
 @NgModule({
   imports: [SharedModule, WowRoutingModule, CommonModule],
@@ -38,6 +39,7 @@ import { DungeonInfoComponent } from './pages/dungeons/components/dungeon-info/d
     RaidsComponent,
     ProfessionsComponent,
     DungeonInfoComponent,
+    BossComponent,
   ],
   providers: [],
 })

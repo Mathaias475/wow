@@ -1,1 +1,26 @@
-<p>dungeon-info works!</p>
+<section
+  class="page section"
+  style="background-image: url('{{ dungeon.background }}');"
+>
+  <div *ngIf="!hasSelected">
+    <wow-search
+      class="text-white"
+      label="Buscar jefe"
+      (onValue)="searchBoss($event)"
+    />
+    <div class="grid grid-cols-3 gap-5">
+      <div
+        *ngFor="let boss of bosses; let i = index"
+        [ngClass]="{ 'fade-in': i >= 0 }"
+      >
+        <div (click)="selectBoss(boss)" class="card text-white">
+          <div class="card__icon">
+            <img [src]="boss.img" />
+          </div>
+          {{ boss.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <wow-boss *ngIf="hasSelected" [boss]="selectedBoss" />
+</section>

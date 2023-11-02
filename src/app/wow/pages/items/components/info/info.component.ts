@@ -23,6 +23,8 @@ export class InfoComponent implements OnInit {
     itemLvl: 0,
     damage: "",
     isArmor: false,
+    isHeroic: false,
+    hasHeroic: false,
     stats: [],
     descriptionText: "",
     exhibition: "",
@@ -43,6 +45,10 @@ export class InfoComponent implements OnInit {
     avaliablesClasses: [],
     socketBonus: "",
     icon: "",
+    itemVersion: "",
+    heroicAdditionalStats: [],
+    heroicStats: [],
+    heroicItemLvl: 0
   };
   routes = WoWRoutes.ROUTES;
   constructor(
@@ -71,7 +77,7 @@ export class InfoComponent implements OnInit {
     this.router.navigate([
       item.loot.type === "dungeon"
         ? this.routes.Dungeons.fullPath
-        : this.routes.Raids.fullPath,
+        : this.routes.Raids.fullPath
     ]);
     this.itemsService.setItem(item);
     this.bossService.setBoss(item.loot.boss);
@@ -84,6 +90,8 @@ export class InfoComponent implements OnInit {
       itemLvl: 0,
       exhibition: "",
       isArmor: false,
+      isHeroic: false,
+      hasHeroic: false,
       damage: "",
       stats: [],
       descriptionText: "",
@@ -104,6 +112,10 @@ export class InfoComponent implements OnInit {
       avaliablesClasses: [],
       socketBonus: "",
       icon: "",
+      itemVersion: "",
+      heroicAdditionalStats: [],
+      heroicStats: [],
+      heroicItemLvl: 0
     };
   }
 

@@ -19,7 +19,7 @@ export class WowComponent implements OnInit{
       }
       setTimeout(()=>{
         this.routeChange = false;
-      },3400)
+      },3000)
     });
   }
 
