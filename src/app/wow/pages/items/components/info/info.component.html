@@ -5,7 +5,7 @@
     <wow-button (click)="selectedItem.itemVersion = 'H'" width="165px" *ngIf="selectedItem?.loot?.type =='raid' && selectedItem.itemVersion == 'N'" label="Ver modo heroico"/> 
     <wow-button (click)="selectedItem.itemVersion = 'N'" width="165px" *ngIf="selectedItem?.loot?.type =='raid' && selectedItem.itemVersion == 'H'" label="Ver modo normal"/>
   </div>
-  <div *ngIf="selectedItem?.itemVersion == 'N'" class="info">
+  <div *ngIf="selectedItem?.itemVersion == 'N' || !selectedItem.itemVersion" class="info">
     <div class="card">
       <div class="card__icon">
         <img [src]="selectedItem.icon" />
@@ -137,7 +137,7 @@
         </div>
         <div *ngIf="selectedItem.socketBonus" class="py-3">
         <div
-          *ngFor="let socket of selectedItem.jewelerSockets"
+          *ngFor="let socket of selectedItem.heroicJewelerSockets"
           class="flex flex-col"
         >
           <div class="flex">
@@ -151,7 +151,7 @@
           </div>
         </div>
         <div class="text-[#466076]">
-          Bonus ranura: {{ selectedItem.socketBonus }}
+          Bonus ranura: {{ selectedItem.heroicSocketBonus }}
         </div>
       </div>
         <div *ngIf="selectedItem.avaliablesClasses" class="flex gap-1 flex-wrap text-[#C1C2C7]">

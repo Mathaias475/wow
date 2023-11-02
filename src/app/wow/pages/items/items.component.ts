@@ -20,7 +20,6 @@ export class ItemsComponent implements OnInit{
     name: "",
     itemLvl: 0,
     damage: "",
-    isHeroic: false,
     hasHeroic: false,
     stats: [],
     descriptionText: "",
@@ -46,7 +45,12 @@ export class ItemsComponent implements OnInit{
     itemVersion: "",
     heroicAdditionalStats: [],
     heroicStats: [],
-    heroicItemLvl: 0
+    heroicItemLvl: 0,
+    heroicDamage: "",
+    heroicWeaponSpeed: "",
+    heroicDamagePerSecond: "",
+    heroicJewelerSockets: [],
+    heroicSocketBonus: ""
   };
 
   constructor(

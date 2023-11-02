@@ -23,7 +23,6 @@ export class InfoComponent implements OnInit {
     itemLvl: 0,
     damage: "",
     isArmor: false,
-    isHeroic: false,
     hasHeroic: false,
     stats: [],
     descriptionText: "",
@@ -40,6 +39,7 @@ export class InfoComponent implements OnInit {
     weaponHands: "",
     itemSlot: "",
     jewelerSockets: [],
+    heroicSocketBonus: "",
     damagePerSecond: 0,
     lvlRequired: 0,
     avaliablesClasses: [],
@@ -48,7 +48,11 @@ export class InfoComponent implements OnInit {
     itemVersion: "",
     heroicAdditionalStats: [],
     heroicStats: [],
-    heroicItemLvl: 0
+    heroicItemLvl: 0,
+    heroicDamage: "",
+    heroicWeaponSpeed: "",
+    heroicDamagePerSecond: "",
+    heroicJewelerSockets: []
   };
   routes = WoWRoutes.ROUTES;
   constructor(
@@ -90,7 +94,6 @@ export class InfoComponent implements OnInit {
       itemLvl: 0,
       exhibition: "",
       isArmor: false,
-      isHeroic: false,
       hasHeroic: false,
       damage: "",
       stats: [],
@@ -107,15 +110,20 @@ export class InfoComponent implements OnInit {
       weaponHands: "",
       itemSlot: "",
       jewelerSockets: [],
+      heroicJewelerSockets: [],
       damagePerSecond: 0,
       lvlRequired: 0,
       avaliablesClasses: [],
       socketBonus: "",
       icon: "",
+      heroicSocketBonus: "",
       itemVersion: "",
       heroicAdditionalStats: [],
       heroicStats: [],
-      heroicItemLvl: 0
+      heroicItemLvl: 0,
+      heroicDamage: "",
+      heroicWeaponSpeed: "",
+      heroicDamagePerSecond: ""
     };
   }
 

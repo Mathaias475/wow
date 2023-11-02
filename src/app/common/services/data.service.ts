@@ -73,7 +73,7 @@ export class DataService {
       if (data) {
         if (collection === "Items") {
           
-          const filteredItems = data.Items.filter((res: Item) =>
+          const filteredItems = data.filter((res: Item) =>
             res.name.toLowerCase().includes(term)
           );
           this.cacheStore.byItem.items = filteredItems;
