@@ -3,10 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({providedIn: 'root'})
 export class BackgroundService {
   constructor() { }
-   getBackground = (type: string, name: string | number): string => {
+   getBackground = (type: string, name: string | number, subType?: string): string => {
     if (typeof name === 'number') {
       const result = Math.floor(Math.random() * name) + 1;
-      return `/assets/img/backgrounds/${type}/${result}.png`;
+      if (subType) {
+        return `/assets/img/backgrounds/${type}/${subType}/${result}.png`;
+      } else {
+        return `/assets/img/backgrounds/${type}/${result}.png`;
+      }
     } else if (typeof name === 'string') {
       return `/assets/img/backgrounds/${type}/${name}.png`;
     } else {

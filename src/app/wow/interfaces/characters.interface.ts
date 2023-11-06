@@ -1,6 +1,8 @@
 export interface Characters  {
   className: string,
   classIcon: string,
-  classHoverIcon: string,
-  showHoverIcon: boolean
+  specializations: [{
+    name: string,
+    icon: string
+  }]
 }
