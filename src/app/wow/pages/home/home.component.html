@@ -3,7 +3,7 @@
     <div *ngFor="let card of cards">
       <div class="cards__item " [class.show]="showCards">
         <img [src]="card.icon" class="cards__item__icon" />
-        {{ card.text }}
+        {{ card.text | textElipsis }}
       </div>
     </div>
   </div>
