@@ -5,6 +5,7 @@ import { initializeApp } from "firebase/app";
 import { child, get, getDatabase, ref } from "firebase/database";
 import { Instance } from "src/app/wow/interfaces/instance.interface";
 import { Boss } from "src/app/wow/interfaces/boss.interface";
+import { Characters } from "src/app/wow/interfaces/characters.interface";
 
 @Injectable({ providedIn: "root" })
 export class DataService {
@@ -70,8 +71,12 @@ export class DataService {
     term: string,
     collection: "Bosses"
   ): Promise<Boss[] | void>;
+  async getData(
+    term: string,
+    collection: "Characters"
+  ): Promise<Characters[] | void>;
   
-  async getData(term: string, collection: string): Promise<Item[] | Instance[] | Boss[] | void> {
+  async getData(term: string, collection: string): Promise<Item[] | Instance[] | Boss[] | Characters[] | void> {
     term = term.toLowerCase();
     const dbref = ref(this.db);
   
@@ -113,7 +118,12 @@ export class DataService {
           this.cacheStore.byBoss.term = term;
           this.setLocalStorage(); 
           return filteredBosses;
-        }
+        }else if (collection === "Characters") {
+          const filteredCharacters = data.filter((res: Characters) =>
+            res.className.toLowerCase().includes(term)
+          );
+          return filteredCharacters;
+        } 
       }
     } catch (error) {
       console.error(`Error: Unable to retrieve data for ${collection}`, error);

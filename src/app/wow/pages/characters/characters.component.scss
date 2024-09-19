@@ -1,0 +1,22 @@
+@mixin card {
+  @apply p-4 h-fit flex gap-7;
+  background-color: rgba($color: #141313, $alpha: 0.8);
+  border: 2px solid #6F6C6E;
+  &__icon {
+    @apply w-20;
+  }
+}
+.card {
+  @include card;
+}
+
+.cursor-hover {
+  cursor: url('/assets/icons/cursor-hover.png'), auto;
+}
+.show {
+  opacity: 1 !important;
+}
+.container {
+  @apply grid grid-cols-2 gap-2 opacity-0;
+  transition: all 2s ease-in-out;
+}

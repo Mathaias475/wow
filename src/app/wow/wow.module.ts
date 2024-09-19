@@ -14,6 +14,7 @@ import { WowRoutingModule } from './wow-routing.module';
 import { CommonModule } from '@angular/common';
 import { DungeonInfoComponent } from './pages/dungeons/components/dungeon-info/dungeon-info.component';
 import { BossComponent } from './pages/dungeons/components/boss/boss.component';
+import { SkillTreeComponent } from './pages/characters/components/skill-tree/skill-tree.component';
 
 @NgModule({
   imports: [SharedModule, WowRoutingModule, CommonModule],
@@ -40,6 +41,7 @@ import { BossComponent } from './pages/dungeons/components/boss/boss.component';
     ProfessionsComponent,
     DungeonInfoComponent,
     BossComponent,
+    SkillTreeComponent,
   ],
   providers: [],
 })
