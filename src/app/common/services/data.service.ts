@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { CacheStore } from "src/app/wow/interfaces/cacheStore.interface";
 import { Item } from "src/app/wow/interfaces/item.interface";
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "firebase.config";
 import { child, get, getDatabase, ref } from "firebase/database";
 import { Instance } from "src/app/wow/interfaces/instance.interface";
 import { Boss } from "src/app/wow/interfaces/boss.interface";
@@ -10,18 +9,28 @@ import { Boss } from "src/app/wow/interfaces/boss.interface";
 @Injectable({ providedIn: "root" })
 export class DataService {
 
-  private app = initializeApp(firebaseConfig);
+  firebaseConfig = {
+    apiKey: "AIzaSyAf_HRxUW0TPdMqdDcyC5c9by3f7AcYHuo",
+    authDomain: "wowapp-8cb29.firebaseapp.com",
+    databaseURL: "https://wowapp-8cb29-default-rtdb.firebaseio.com",
+    projectId: "wowapp-8cb29",
+    storageBucket: "wowapp-8cb29.appspot.com",
+    messagingSenderId: "1029257157329",
+    appId: "1:1029257157329:web:3b55192c61762521afc3f0",
+    measurementId: "G-QMC1GN8T64"
+  };
+  private app = initializeApp(this.firebaseConfig);
   private db = getDatabase(this.app);
-
+  
   private setLocalStorage() {
     localStorage.setItem('cacheStore',JSON.stringify(this.cacheStore));
   }
-
+  
   private getLocalStorage() {
     if(!localStorage.getItem('cacheStore')) return;
     this.cacheStore =JSON.parse( localStorage.getItem('cacheStore')!);
   }
-
+  
   constructor() {
     this.getLocalStorage();
   }
