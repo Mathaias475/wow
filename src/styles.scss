@@ -4,32 +4,32 @@
 @import "tailwindcss/utilities";
 
 .wow-blue {
-  color: #0159B2;
+  color: #0159b2;
 }
 .wow-orange {
-  color: #D45509;
+  color: #d45509;
 }
 .wow-violet {
-  color: #7F2ABB,
+  color: #7f2abb;
 }
 .wow-green {
-  color: #19F003;
+  color: #19f003;
 }
 .wow-gray {
-  color: #FAFAFB;
+  color: #fafafb;
 }
 .page {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
 }
 .shadow-3xl {
---tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    --tw-shadow-colored: 0 4px 21px 9px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 4px 21px 9px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .align {
   display: flex;
   justify-content: center;
@@ -39,9 +39,8 @@
   padding: 90px 50px 50px 50px;
 }
 .custom-cursor {
-  cursor: url('/assets/icons/cursor.png'), auto;
+  cursor: url("/assets/icons/cursor.png"), auto;
 }
 .not-allowed {
   cursor: not-allowed;
 }
-

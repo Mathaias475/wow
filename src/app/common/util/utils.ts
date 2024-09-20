@@ -70,7 +70,7 @@ export const getColorClassByName = (name: string): string => {
       color = "#A9D372";
       break;
     case "Sacerdote":
-      color = "#FFFFFF";
+      color = "#FAFAFB";
       break;
     case "Picaro":
       color = "#FEF468";
@@ -82,7 +82,7 @@ export const getColorClassByName = (name: string): string => {
       color = "#40C6EB";
       break;
     default:
-      color = "#FFFFFF";
+      color = "#FAFAFB";
   }
   return color;
 };

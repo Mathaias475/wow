@@ -5,16 +5,16 @@
 >
   <wow-search placeholder="Buscar clase" (onValue)="searchCharacter($event)" />
   <div class="container" [class.show]="showCharacters">
-    <div *ngFor="let class of characters" [class.show]="showCharacters">
+    <div *ngFor="let character of characters" [class.show]="showCharacters">
       <div
-        (click)="selectCharacter(class)"
+        (click)="selectCharacter(character)"
         class="flex cursor-hover shadow-3xl hover:shadow-[{{
-          getColorClass(class.className)
+          getColorClass(character.className)
         }}] card col-span-1 gap-2 items-center justify-start"
       >
-        <img class="class-icon w-20" [src]="class.classIcon" />
-        <span class="text-2xl text-[{{ getColorClass(class.className) }}]">
-          {{ class.className }}
+        <img class="class-icon w-20" [src]="character.classIcon" />
+        <span class="text-2xl text-[{{ getColorClass(character.className) }}]">
+          {{ character.className }}
         </span>
       </div>
     </div>
@@ -26,14 +26,12 @@
   *ngIf="isSelected"
 >
   <wow-button width="165px" label="Atras" (click)="goBack()" />
-  <p class="my-4">
-    Selecciona la especializacion:
-  </p>
-  <div class="grid grid-cols-3">
-    <div class="col-span-1" *ngFor="let spec of selectedCharacter.specializations">
-      <div class="flex card w-fit !px-11 items-center justify-center gap-3">
+  <p class="my-4">Selecciona la especializacion:</p>
+  <div class="spec-container">
+    <div *ngFor="let spec of selectedCharacter.specializations">
+      <div class="spec-card">
         <img class="w-20 rounded-full" [src]="spec.icon" />
-       <span class="text-xl">{{ spec.name }}</span>
+        <span class="text-xl">{{ spec.name }}: {{ spec.description }}</span>
       </div>
     </div>
   </div>

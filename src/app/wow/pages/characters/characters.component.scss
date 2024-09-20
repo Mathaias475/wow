@@ -1,7 +1,7 @@
 @mixin card {
   @apply p-4 h-fit flex gap-7;
   background-color: rgba($color: #141313, $alpha: 0.8);
-  border: 2px solid #6F6C6E;
+  border: 2px solid #6f6c6e;
   &__icon {
     @apply w-20;
   }
@@ -11,7 +11,7 @@
 }
 
 .cursor-hover {
-  cursor: url('/assets/icons/cursor-hover.png'), auto;
+  cursor: url("/assets/icons/cursor-hover.png"), auto;
 }
 .show {
   opacity: 1 !important;
@@ -19,4 +19,20 @@
 .container {
   @apply grid grid-cols-2 gap-2 opacity-0;
   transition: all 2s ease-in-out;
+}
+
+.spec-container {
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spec-card {
+  display: flex;
+  @include card;
+  width: 500px;
+  padding-left: 44px !important;
+  padding-right: 44px !important;
+  align-items: center;
 }

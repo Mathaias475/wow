@@ -15,7 +15,7 @@ export class CharactersComponent implements OnInit {
   selectedCharacter: Characters = {
     className: "",
     classIcon: "",
-    specializations: [{name: '', icon: ''}]
+    specializations: [{ name: "", icon: "", description: "" }],
   };
   showCharacters = false;
 
@@ -32,7 +32,7 @@ export class CharactersComponent implements OnInit {
   ngOnInit(): void {
     this.bgImg = this.backgroundService.getBackground("characters", 3);
     this.searchCharacter("");
-    setTimeout(() =>{
+    setTimeout(() => {
       this.showCharacters = true;
     }, 100);
   }
@@ -41,18 +41,21 @@ export class CharactersComponent implements OnInit {
   }
   selectCharacter(character: Characters) {
     this.selectedCharacter = character;
-    this.bgImg = this.backgroundService.getBackground('characters', 2, character.className);
+    this.bgImg = this.backgroundService.getBackground(
+      "characters",
+      2,
+      character.className
+    );
     this.isSelected = true;
-    
   }
   goBack() {
     this.selectedCharacter = {
-      className: '',
+      className: "",
       classIcon: "",
-      specializations: [{name: '', icon: ''}]
+      specializations: [{ name: "", icon: "", description: "" }],
     };
     this.isSelected = false;
     this.bgImg = this.backgroundService.getBackground("characters", 3);
-    this.searchCharacter('')
+    this.searchCharacter("");
   }
 }
