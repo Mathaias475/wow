@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { BackgroundService } from "src/app/common/services/background.service";
 import { DataService } from "src/app/common/services/data.service";
-import { Item } from '../../interfaces/item.interface';
-import { getColorNameByRarity, getColorBoxShadowByRarity } from "src/app/common/util/utils";
+import { Item } from "../../interfaces/item.interface";
+import {
+  getColorNameByRarity,
+  getColorBoxShadowByRarity,
+} from "src/app/common/util/utils";
 import { ItemsService } from "src/app/common/services/items.service";
 
 @Component({
@@ -10,12 +13,11 @@ import { ItemsService } from "src/app/common/services/items.service";
   templateUrl: "./items.component.html",
   styleUrls: ["./items.component.scss"],
 })
-export class ItemsComponent implements OnInit{
-
-  bgImg = this.backgroundService.getBackground("items", 2);
-  items : Item[] = [];
+export class ItemsComponent implements OnInit {
+  bgImg = this.backgroundService.getBackground("items", 3);
+  items: Item[] = [];
   showItem = false;
-  filter = '';
+  filter = "";
   selectedItem: Item = {
     name: "",
     itemLvl: 0,
@@ -26,15 +28,15 @@ export class ItemsComponent implements OnInit{
     loot: {
       type: "",
       instance: "",
-      boss: ""
+      boss: "",
     },
-    exhibition: '',
+    exhibition: "",
     isArmor: false,
     rare: "",
     itemSlot: "",
     additionalStats: [],
     itemType: "",
-    weaponSpeed: '',
+    weaponSpeed: "",
     weaponHands: "",
     jewelerSockets: [],
     damagePerSecond: 0,
@@ -50,7 +52,7 @@ export class ItemsComponent implements OnInit{
     heroicWeaponSpeed: "",
     heroicDamagePerSecond: "",
     heroicJewelerSockets: [],
-    heroicSocketBonus: ""
+    heroicSocketBonus: "",
   };
 
   constructor(
@@ -59,26 +61,26 @@ export class ItemsComponent implements OnInit{
     private itemsService: ItemsService
   ) {}
 
- ngOnInit(): void {
-  let itemFromBoss = this.itemsService.getItem();
-  this.selectItem(itemFromBoss);
-  this.filter = this.dataService.cacheStore.byItem.term;
-  (this.dataService.cacheStore.byItem.term != '') ?
-  this.items = this.dataService.cacheStore.byItem.items :
-   this.searchItem('');
-}
+  ngOnInit(): void {
+    let itemFromBoss = this.itemsService.getItem();
+    this.selectItem(itemFromBoss);
+    this.filter = this.dataService.cacheStore.byItem.term;
+    this.dataService.cacheStore.byItem.term != ""
+      ? (this.items = this.dataService.cacheStore.byItem.items)
+      : this.searchItem("");
+  }
 
-getColorName(rarity: string) {
- return getColorNameByRarity(rarity);
-}
+  getColorName(rarity: string) {
+    return getColorNameByRarity(rarity);
+  }
 
-getBoxShadowColor(rarity: string) {
-  return getColorBoxShadowByRarity(rarity);
-}
+  getBoxShadowColor(rarity: string) {
+    return getColorBoxShadowByRarity(rarity);
+  }
 
- async searchItem(name: string) {
-  const response = await this.dataService.getData(name, "Items");
-  this.items = response ? response : [];
+  async searchItem(name: string) {
+    const response = await this.dataService.getData(name, "Items");
+    this.items = response ? response : [];
   }
   selectItem(item: Item) {
     this.selectedItem = item;
