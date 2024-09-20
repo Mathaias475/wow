@@ -5,22 +5,19 @@ import { NavigationEnd, Router } from "@angular/router";
   selector: "app-wow",
   templateUrl: "./wow.component.html",
 })
-export class WowComponent implements OnInit{
-  
+export class WowComponent implements OnInit {
   routeChange = false;
-  
-  constructor (private router: Router) {}
-  
-  ngOnInit(): void {
 
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.routeChange = true;
       }
-      setTimeout(()=>{
+      setTimeout(() => {
         this.routeChange = false;
-      },3000)
+      }, 1000);
     });
   }
-
 }
