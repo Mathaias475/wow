@@ -6,6 +6,12 @@ export interface Characters {
       name: string;
       icon: string;
       description: string;
+      habilities: [
+        {
+          icon: string;
+          name: string;
+        }
+      ];
     }
   ];
 }

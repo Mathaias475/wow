@@ -15,7 +15,14 @@ export class CharactersComponent implements OnInit {
   selectedCharacter: Characters = {
     className: "",
     classIcon: "",
-    specializations: [{ name: "", icon: "", description: "" }],
+    specializations: [
+      {
+        name: "",
+        icon: "",
+        description: "",
+        habilities: [{ icon: "", name: "" }],
+      },
+    ],
   };
   showCharacters = false;
 
@@ -52,7 +59,14 @@ export class CharactersComponent implements OnInit {
     this.selectedCharacter = {
       className: "",
       classIcon: "",
-      specializations: [{ name: "", icon: "", description: "" }],
+      specializations: [
+        {
+          name: "",
+          icon: "",
+          description: "",
+          habilities: [{ icon: "", name: "" }],
+        },
+      ],
     };
     this.isSelected = false;
     this.bgImg = this.backgroundService.getBackground("characters", 3);

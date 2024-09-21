@@ -31,7 +31,11 @@
     <div *ngFor="let spec of selectedCharacter.specializations">
       <div class="spec-card">
         <img class="w-20 rounded-full" [src]="spec.icon" />
-        <span class="text-xl">{{ spec.name }}: {{ spec.description }}</span>
+
+        <span class="text-xl">{{ spec.name }}: {{ spec.description }} </span>
+        <div *ngFor="let hability of spec.habilities">
+          <img class="w-20 rounded-full" [src]="hability.icon" />
+        </div>
       </div>
     </div>
   </div>
