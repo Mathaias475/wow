@@ -29,12 +29,17 @@
   <p class="my-4">Selecciona la especializacion:</p>
   <div class="spec-container">
     <div *ngFor="let spec of selectedCharacter.specializations">
-      <div class="spec-card">
-        <img class="w-20 rounded-full" [src]="spec.icon" />
-
-        <span class="text-xl">{{ spec.name }}: {{ spec.description }} </span>
+      <div class="flex gap-8 items-center">
+        <div
+          class="spec-card hover:cursor-hover hover:shadow-[{{
+            spec.specializationColor
+          }}] shadow-3xl"
+        >
+          <img class="w-20 rounded-full" [src]="spec.icon" />
+          <span class="text-xl">{{ spec.name }}: {{ spec.description }} </span>
+        </div>
         <div *ngFor="let hability of spec.habilities">
-          <img class="w-20 rounded-full" [src]="hability.icon" />
+          <img class="spec-habilities" [src]="hability.icon" />
         </div>
       </div>
     </div>

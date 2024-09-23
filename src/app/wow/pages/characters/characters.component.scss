@@ -29,13 +29,15 @@
 }
 
 .spec-card {
-  display: flex;
+  @apply flex w-[500px] px-11 items-center;
   @include card;
-  width: 500px;
-  padding-left: 44px !important;
-  padding-right: 44px !important;
-  align-items: center;
+}
+.spec-card:hover ~ div > .spec-habilities {
+  opacity: 1;
+  transform: translateX(30px);
+  transition: all 1s ease-in-out;
 }
 
 .spec-habilities {
+  @apply w-20 rounded-full opacity-0;
 }
