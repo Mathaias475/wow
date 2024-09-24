@@ -3,24 +3,26 @@
   style="background-image: url('{{ bgImg }}');"
   *ngIf="!hasSelected"
 >
-  <wow-search
-    class="text-white"
-    placeholder="Buscar calabozo"
-    [value]="filter"
-    (onValue)="searchDungeon($event)"
-  />
-  <div class="grid grid-cols-3 gap-5">
-    <div
-      *ngFor="let dungeon of dungeons; let i = index"
-      [ngClass]="{ 'fade-in': i >= 0 }"
-    >
-      <div (click)="selectDungeon(dungeon)" class="card text-white">
-        <div class="card__icon">
-          <img [src]="dungeon.locationImg" />
+  <div class="flex flex-col gap-6">
+    <wow-search
+      class="text-white"
+      placeholder="Buscar calabozo"
+      [value]="filter"
+      (onValue)="searchDungeon($event)"
+    />
+    <div class="grid grid-cols-3 gap-5">
+      <div
+        *ngFor="let dungeon of dungeons; let i = index"
+        [ngClass]="{ 'fade-in': i >= 0 }"
+      >
+        <div (click)="selectDungeon(dungeon)" class="card text-white">
+          <div class="card__icon">
+            <img [src]="dungeon.locationImg" />
+          </div>
+          {{ dungeon.name }}
         </div>
-        {{ dungeon.name }}
       </div>
     </div>
   </div>
 </section>
-<wow-dungeon-info *ngIf="hasSelected" [dungeon]="selectedDungeon"/>
+<wow-dungeon-info *ngIf="hasSelected" [dungeon]="selectedDungeon" />
