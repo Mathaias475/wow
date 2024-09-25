@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { WoWRoutes } from 'src/app/wow/wow.routes';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
+import { WoWRoutes } from "src/app/wow/wow.routes";
 
 @Component({
-  selector: 'wow-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: "wow-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
   showDropDown = false;
@@ -13,34 +13,34 @@ export class HeaderComponent {
 
   options = [
     {
-      name: 'Items',
+      name: "Items",
       route: this.routes.Items.fullPath,
-      icon: '',
+      icon: "",
     },
     {
-      name: 'Characters',
+      name: "Characters",
       route: this.routes.Characters.fullPath,
-      icon: '',
+      icon: "",
     },
     {
-      name: 'Professions',
+      name: "Professions",
       route: this.routes.Professions.fullPath,
-      icon: '',
+      icon: "",
     },
     {
-      name: 'Dungeons',
+      name: "Dungeons",
       route: this.routes.Dungeons.fullPath,
-      icon: '',
+      icon: "",
     },
     {
-      name: 'Battlegrounds',
+      name: "Battlegrounds",
       route: this.routes.Battlegrounds.fullPath,
-      icon: '',
+      icon: "",
     },
     {
-      name: 'Raids',
+      name: "Raids",
       route: this.routes.Raids.fullPath,
-      icon: '',
+      icon: "",
     },
   ];
   constructor(private router: Router) {}
@@ -55,16 +55,16 @@ export class HeaderComponent {
   }
   showDropDownOptions() {
     this.showDropDown = !this.showDropDown;
-    if(this.showDropDown == true) { 
-      this.setIconForOption(this.options, 0, 'bags', 4);
-      this.setIconForOption(this.options, 1, 'classes', 12);
-      this.setIconForOption(this.options, 2, 'professions', 15);
-      this.setIconForOption(this.options, 3, 'dungeon/rols', 3);
-      this.setIconForOption(this.options, 4, 'battlegrounds', 2);
-      this.setIconForOption(this.options, 5, 'raids', 3);
-      setTimeout(()=>{
+    if (this.showDropDown == true) {
+      this.setIconForOption(this.options, 0, "bags", 4);
+      this.setIconForOption(this.options, 1, "classes", 10);
+      this.setIconForOption(this.options, 2, "professions", 15);
+      this.setIconForOption(this.options, 3, "dungeon/rols", 3);
+      this.setIconForOption(this.options, 4, "battlegrounds", 2);
+      this.setIconForOption(this.options, 5, "raids", 3);
+      setTimeout(() => {
         this.showDropDown == false;
-      },500);
+      }, 500);
     }
   }
   getRandomIcon(type: string, maxRange: number) {
@@ -72,9 +72,13 @@ export class HeaderComponent {
     const result = Math.floor(number * maxRange) + 1;
     return `/assets/img/${type}/${result}.png`;
   }
-  
-  setIconForOption(options:{icon: string, name: string, route: string}[], index: number, type: string, maxRange: number) {
+
+  setIconForOption(
+    options: { icon: string; name: string; route: string }[],
+    index: number,
+    type: string,
+    maxRange: number
+  ) {
     options[index].icon = this.getRandomIcon(type, maxRange);
   }
-  
 }
