@@ -1,6 +1,10 @@
 <section class="page section" style="background-image: url('{{ bgImg }}');">
   <div *ngIf="!showItem" class="flex flex-col gap-6">
-    <wow-search placeholder="Buscar item" [value]="filter" (onValue)="searchItem($event)" />
+    <wow-search
+      placeholder="Buscar item"
+      [value]="filter"
+      (onValue)="searchItem($event)"
+    />
     <div class="grid grid-cols-3 gap-5">
       <div
         *ngFor="let item of items; let i = index"
@@ -23,6 +27,6 @@
     </div>
   </div>
   <div *ngIf="showItem">
-   <wow-info [(show)]="showItem" [selectedItem]="selectedItem"/>
+    <wow-info [(show)]="showItem" [selectedItem]="selectedItem" />
   </div>
 </section>

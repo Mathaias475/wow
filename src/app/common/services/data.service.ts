@@ -6,10 +6,9 @@ import { child, get, getDatabase, ref } from "firebase/database";
 import { Instance } from "src/app/wow/interfaces/instance.interface";
 import { Boss } from "src/app/wow/interfaces/boss.interface";
 import { Characters } from "src/app/wow/interfaces/characters.interface";
-
+import { Mounts } from "src/app/wow/interfaces/mounts.interface";
 @Injectable({ providedIn: "root" })
 export class DataService {
-
   firebaseConfig = {
     apiKey: "AIzaSyAf_HRxUW0TPdMqdDcyC5c9by3f7AcYHuo",
     authDomain: "wowapp-8cb29.firebaseapp.com",
@@ -18,24 +17,23 @@ export class DataService {
     storageBucket: "wowapp-8cb29.appspot.com",
     messagingSenderId: "1029257157329",
     appId: "1:1029257157329:web:3b55192c61762521afc3f0",
-    measurementId: "G-QMC1GN8T64"
+    measurementId: "G-QMC1GN8T64",
   };
   private app = initializeApp(this.firebaseConfig);
   private db = getDatabase(this.app);
-  
+
   private setLocalStorage() {
-    localStorage.setItem('cacheStore',JSON.stringify(this.cacheStore));
+    localStorage.setItem("cacheStore", JSON.stringify(this.cacheStore));
   }
-  
+
   private getLocalStorage() {
-    if(!localStorage.getItem('cacheStore')) return;
-    this.cacheStore =JSON.parse( localStorage.getItem('cacheStore')!);
+    if (!localStorage.getItem("cacheStore")) return;
+    this.cacheStore = JSON.parse(localStorage.getItem("cacheStore")!);
   }
-  
+
   constructor() {
     this.getLocalStorage();
   }
-
 
   cacheStore: CacheStore = {
     byItem: {
@@ -44,55 +42,53 @@ export class DataService {
     },
     byRaid: {
       term: "",
-      raids: [] 
+      raids: [],
     },
     byDungeon: {
       term: "",
-      dungeons: [] 
+      dungeons: [],
     },
     byBoss: {
       term: "",
-      bosses: []
-    }
+      bosses: [],
+    },
+    byMounts: {
+      term: "",
+      mounts: [],
+    },
   };
-  async getData(
-    term: string,
-    collection: "Items"
-  ): Promise<Item[] | void>;
+  async getData(term: string, collection: "Items"): Promise<Item[] | void>;
   async getData(
     term: string,
     collection: "Dungeons"
   ): Promise<Instance[] | void>;
-  async getData(
-    term: string,
-    collection: "Raids"
-  ): Promise<Instance[] | void>;
-  async getData(
-    term: string,
-    collection: "Bosses"
-  ): Promise<Boss[] | void>;
+  async getData(term: string, collection: "Raids"): Promise<Instance[] | void>;
+  async getData(term: string, collection: "Bosses"): Promise<Boss[] | void>;
   async getData(
     term: string,
     collection: "Characters"
   ): Promise<Characters[] | void>;
-  
-  async getData(term: string, collection: string): Promise<Item[] | Instance[] | Boss[] | Characters[] | void> {
+  async getData(term: string, collection: "Mounts"): Promise<Mounts[] | void>;
+
+  async getData(
+    term: string,
+    collection: string
+  ): Promise<Item[] | Instance[] | Boss[] | Characters[] | Mounts[] | void> {
     term = term.toLowerCase();
     const dbref = ref(this.db);
-  
+
     try {
       const snapshot = await get(child(dbref, `/${collection}`));
       const data = snapshot.val();
-  
+
       if (data) {
         if (collection === "Items") {
-          
           const filteredItems = data.filter((res: Item) =>
             res.name.toLowerCase().includes(term)
           );
           this.cacheStore.byItem.items = filteredItems;
           this.cacheStore.byItem.term = term;
-          this.setLocalStorage(); 
+          this.setLocalStorage();
           return filteredItems;
         } else if (collection === "Dungeons") {
           const filteredDungeons = data.filter((res: Instance) =>
@@ -100,7 +96,7 @@ export class DataService {
           );
           this.cacheStore.byDungeon.dungeons = filteredDungeons;
           this.cacheStore.byDungeon.term = term;
-          this.setLocalStorage(); 
+          this.setLocalStorage();
           return filteredDungeons;
         } else if (collection === "Raids") {
           const filteredRaids = data.Raids.filter((res: Instance) =>
@@ -108,7 +104,7 @@ export class DataService {
           );
           this.cacheStore.byRaid.raids = filteredRaids;
           this.cacheStore.byRaid.term = term;
-          this.setLocalStorage(); 
+          this.setLocalStorage();
           return filteredRaids;
         } else if (collection === "Bosses") {
           const filteredBosses = data.filter((res: Boss) =>
@@ -116,18 +112,25 @@ export class DataService {
           );
           this.cacheStore.byBoss.bosses = filteredBosses;
           this.cacheStore.byBoss.term = term;
-          this.setLocalStorage(); 
+          this.setLocalStorage();
           return filteredBosses;
-        }else if (collection === "Characters") {
+        } else if (collection === "Characters") {
           const filteredCharacters = data.filter((res: Characters) =>
             res.className.toLowerCase().includes(term)
           );
           return filteredCharacters;
-        } 
+        } else if (collection === "Mounts") {
+          const filteredMounts = data.filter((res: Mounts) =>
+            res.mountName.toLowerCase().includes(term)
+          );
+          this.cacheStore.byMounts.mounts = filteredMounts;
+          this.cacheStore.byMounts.term = term;
+          this.setLocalStorage();
+          return filteredMounts;
+        }
       }
     } catch (error) {
       console.error(`Error: Unable to retrieve data for ${collection}`, error);
     }
   }
-
 }

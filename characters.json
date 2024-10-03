@@ -1,62 +1,42 @@
 [
   {
     "className": "Guerrero",
-    "classIcon": "/assets/img/characters/warrior.png",
-    "classHoverIcon": "/assets/img/characters/hover/warrior-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/warrior.png"
   },
   {
     "className": "Caballero de la Muerte",
-    "classIcon": "/assets/img/characters/dk.png",
-    "classHoverIcon": "/assets/img/characters/hover/dk-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/dk.png"
   },
   {
     "className": "Sacerdote",
-    "classIcon": "/assets/img/characters/priest.png",
-    "classHoverIcon": "/assets/img/characters/hover/priest-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/priest.png"
   },
   {
     "className": "Chaman",
-    "classIcon": "/assets/img/characters/shaman.png",
-    "classHoverIcon": "/assets/img/characters/hover/shaman-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/shaman.png"
   },
   {
     "className": "Druida",
-    "classIcon": "/assets/img/characters/druid.png",
-    "classHoverIcon": "/assets/img/characters/hover/druid-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/druid.png"
   },
   {
     "className": "Brujo",
-    "classIcon": "/assets/img/characters/warlock.png",
-    "classHoverIcon": "/assets/img/characters/hover/warlock-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/warlock.png"
   },
   {
     "className": "Picaro",
-    "classIcon": "/assets/img/characters/rogue.png",
-    "classHoverIcon": "/assets/img/characters/hover/rogue-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/rogue.png"
   },
   {
     "className": "Mago",
-    "classIcon": "/assets/img/characters/mage.png",
-    "classHoverIcon": "/assets/img/characters/hover/mage-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/mage.png"
   },
   {
     "className": "Paladin",
-    "classIcon": "/assets/img/characters/paladin.png",
-    "classHoverIcon": "/assets/img/characters/hover/paladin-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/paladin.png"
   },
   {
     "className": "Cazador",
-    "classIcon": "/assets/img/characters/hunter.png",
-    "classHoverIcon": "/assets/img/characters/hover/hunter-hover.png",
-    "showHoverIcon": false
+    "classIcon": "/assets/img/characters/hunter.png"
   }
 ]
