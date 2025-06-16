@@ -17,15 +17,13 @@
           }}] shadow-3xl"
         >
           <div class="card_icon">
-            <img [src]="mounts.mountIcon" />
+            <img [src]="mount.mountIcon" />
           </div>
           <div class="{{ getColorName(mount.rare) }}">
-            {{ mountIcon }}
+            {{ mount.mountIcon }}
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div *ngIf="showMount"></div>
-  <wow-info [(show)]="showMount" [selectedMount]="selectedMount" />
 </section>
