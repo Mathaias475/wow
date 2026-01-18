@@ -1,8 +1,8 @@
 <div [class.opacity]="showDropDown" class="header">
   <div class="flex gap-5">
     <img
-      class="w-9 h-9 cursor-pointer"
-      src="/assets/img/home.png"
+      class="stone"
+      src="/assets/icons/home.png"
       (click)="goToHome()"
     />
     <img
@@ -13,7 +13,7 @@
     />
   </div>
 </div>
-<div [class.z]="showDropDown" class="dropdown__menu">
+<div [class.opacity]="showDropDown" class="dropdown__menu">
   <div
     (click)="redirectTo(option.route)"
     class="dropdown__menu__item"

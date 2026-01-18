@@ -1,0 +1,29 @@
+<section class="page section" style="background-image: url('{{ bgImg }}');">
+  <div *ngIf="!showMount" class="flex flex-col gap-6">
+    <wow-search
+      placeholder="Buscar Montura..."
+      [value]="filter"
+      (onValue)="searchMounts($event)"
+    />
+    <div class="grid grid-cols-3 gap-5">
+      <div
+        *ngFor="let mount of mounts; let i = index"
+        [ngClass]="{ 'fade-in': i >= 0 }"
+      >
+        <div
+          (click)="selectMount(mount)"
+          class="card hover:cursor-hover hover:shadow-[{{
+            getBoxShadowColor(mount.rare)
+          }}] shadow-3xl"
+        >
+          <div class="card_icon">
+            <img [src]="mount.mountIcon" />
+          </div>
+          <div class="{{ getColorName(mount.rare) }}">
+            {{ mount.mountIcon }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

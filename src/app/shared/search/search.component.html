@@ -1,1 +1,6 @@
-<input type="text" (keyup.enter)="onSearch(search.value)" #search>
+<input type="text" 
+class="search"
+[value]="value"
+(keyup)="onSearch(search.value)"
+[placeholder]="placeholder"
+#search/>

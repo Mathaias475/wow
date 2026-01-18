@@ -1,1 +1,47 @@
-<p>characters works!</p>
+<section
+  class="page section gap-4 flex flex-col"
+  style="background-image: url('{{ bgImg }}');"
+  *ngIf="!isSelected"
+>
+  <wow-search placeholder="Buscar clase" (onValue)="searchCharacter($event)" />
+  <div class="container" [class.show]="showCharacters">
+    <div *ngFor="let character of characters" [class.show]="showCharacters">
+      <div
+        (click)="selectCharacter(character)"
+        class="flex cursor-hover shadow-3xl hover:shadow-[{{
+          getColorClass(character.className)
+        }}] card col-span-1 gap-2 items-center justify-start"
+      >
+        <img class="class-icon w-20" [src]="character.classIcon" />
+        <span class="text-2xl text-[{{ getColorClass(character.className) }}]">
+          {{ character.className }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+<section
+  class="page section text-white"
+  style="background-image: url('{{ bgImg }}');"
+  *ngIf="isSelected"
+>
+  <wow-button width="165px" label="Atras" (click)="goBack()" />
+  <p class="my-4">Selecciona la especializacion:</p>
+  <div class="spec-container">
+    <div *ngFor="let spec of selectedCharacter.specializations">
+      <div class="flex gap-8 items-center">
+        <div
+          class="spec-card hover:cursor-hover hover:shadow-[{{
+            spec.specializationColor
+          }}] shadow-3xl"
+        >
+          <img class="w-20 rounded-full" [src]="spec.icon" />
+          <span class="text-xl">{{ spec.name }}: {{ spec.description }} </span>
+        </div>
+        <div *ngFor="let hability of spec.habilities">
+          <img class="spec-habilities" [src]="hability.icon" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

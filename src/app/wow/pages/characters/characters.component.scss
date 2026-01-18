@@ -1,0 +1,43 @@
+@mixin card {
+  @apply p-4 h-fit flex gap-7;
+  background-color: rgba($color: #141313, $alpha: 0.8);
+  border: 2px solid #6f6c6e;
+  &__icon {
+    @apply w-20;
+  }
+}
+.card {
+  @include card;
+}
+
+.cursor-hover {
+  cursor: url("/assets/icons/cursor-hover.png"), auto;
+}
+.show {
+  opacity: 1 !important;
+}
+.container {
+  @apply grid grid-cols-2 gap-2 opacity-0;
+  transition: all 2s ease-in-out;
+}
+
+.spec-container {
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spec-card {
+  @apply flex w-[500px] px-11 items-center;
+  @include card;
+}
+.spec-card:hover ~ div > .spec-habilities {
+  opacity: 1;
+  transform: translateX(30px);
+  transition: all 1s ease-in-out;
+}
+
+.spec-habilities {
+  @apply w-20 rounded-full opacity-0;
+}

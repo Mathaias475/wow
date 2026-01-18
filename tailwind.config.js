@@ -1,9 +1,59 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{html,ts,}",
+    //colores objetos
+    { raw: '<div class="hover:shadow-[#D45509]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#7F2ABB]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#0159B2]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#19F003]">', extension: "html" },
+    //colores clases
+    { raw: '<div class="hover:shadow-[#96775A]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#B96E9E]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#A91C33]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#8788EE]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#F2780C]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#A9D372]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#FAFAFB]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#FEF468]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#0086FF]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#40C6EB]">', extension: "html" },
+    //colores de especializaciones
+    { raw: '<div class="hover:shadow-[#CB3F09]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#17046F]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#CB7E68]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#171E5E]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#78C13F]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#FFBC43]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#A4ECFD]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#4B0685]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#39B049]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#C788D1]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#33A0A7]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#99BBD8]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#70D626]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#010515]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#661900]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#1450D3]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#973217]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#7780DF]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#B5812C]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#BA9A5E]">', extension: "html" },
+    { raw: '<div class="hover:shadow-[#499529]">', extension: "html" },
+    //colores clases texto
+    { raw: '<div class="text-[#96775A]">', extension: "html" },
+    { raw: '<div class="text-[#B96E9E]">', extension: "html" },
+    { raw: '<div class="text-[#A91C33]">', extension: "html" },
+    { raw: '<div class="text-[#8788EE]">', extension: "html" },
+    { raw: '<div class="text-[#F2780C]">', extension: "html" },
+    { raw: '<div class="text-[#A9D372]">', extension: "html" },
+    { raw: '<div class="text-[#FAFAFB]">', extension: "html" },
+    { raw: '<div class="text-[#FEF468]">', extension: "html" },
+    { raw: '<div class="text-[#0086FF]">', extension: "html" },
+    { raw: '<div class="text-[#40C6EB]">', extension: "html" },
+  ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
-
+};

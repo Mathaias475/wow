@@ -1,0 +1,6 @@
+loot: 
+<div class="card text-white">
+  <div (click)="goToItems(item)" *ngFor="let item of boss.loot">
+    {{item.name}}
+  </div>
+</div>
